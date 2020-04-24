@@ -1,0 +1,94 @@
+{% set services = [
+  {
+    title: "Sourcing",
+    image: "/img/objects/sourcing.jpg",
+    description: "PT Serif: Pt Serif has a strong base, easy to read at small size and low contrast. The Square Base makes a nice contrast with round geometric of Muli.",
+    background: "/img/objects/sourcing-bg.png"
+  },
+  {
+    title: "Procurement",
+    image: "/img/objects/procurement.jpg",
+    description: "PT Serif: Pt Serif has a strong base, easy to read at small size and low contrast. The Square Base makes a nice contrast with round geometric of Muli.",
+    background: ""
+  },
+  {
+    title: "Transportation",
+    image: "/img/objects/transportation.jpg",
+    description: "PT Serif: Pt Serif has a strong base, easy to read at small size and low contrast. The Square Base makes a nice contrast with round geometric of Muli.",
+    background: "/img/objects/transportation-bg.png"
+  },
+  {
+    title: "Shipping",
+    image: "/img/objects/shipping.jpg",
+    description: "PT Serif: Pt Serif has a strong base, easy to read at small size and low contrast. The Square Base makes a nice contrast with round geometric of Muli.",
+    background: ""
+  },
+  {
+    title: "Customs Clearance",
+    image: "/img/objects/clearance.jpg",
+    description: "PT Serif: Pt Serif has a strong base, easy to read at small size and low contrast. The Square Base makes a nice contrast with round geometric of Muli.",
+    background: "/img/objects/clearance-bg.png"
+  }
+] %}
+
+<section id="logistics" class="section">
+  <div class="section__inner container padding-y-xxl">
+    <div class="grid grid-gap-xxl justify-content-end">
+      <div class="col-9@md">
+        <div class="grid grid-gap-xxl">
+            <div class="col-5@lg">
+              <h2 class="text-xxxl section__title">Logistics<br><span>Services</span></h2>
+            </div>
+            <div class="col-7@lg">
+              <div class="text-component margin-top-xxxl@lg">
+                <h4>Why choose PT Serif and Muli</h4>
+                <p>PT Serif: Pt Serif has a strong base, easy to read at small size and low contrast. The Square Base makes a nice contrast with round geometric of Muli.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="col-1 display@md"></div>
+
+      <div class="col-12">
+        <div class="services--grid">
+          {% for item in services %}
+            <div class="services--grid__item grid grid-gap-xxl align-items-center">
+              {% if loop.index0 % 2 == 0 %}
+                <div class="col-6@md">
+                  <div class="crop crop--3:4@md crop--fit">
+                    <img data-src="{{ item.image }}" alt="{{ item.title }}" class="crop__content to-animate" data-animate="zoom-in">
+                  </div>
+                </div>
+                <div class="col-4@lg col-6@md">
+                  <h2>{{ item.title }}</h2>
+                  <img data-src="/img/icons/ic-divider.svg" alt="divider" class="margin-y-lg">
+                  <p>{{ item.description }}</p>
+                </div>
+              {% else %}
+                <div class="col-8@md margin-left-auto">
+                  <div class="position-relative">
+                    <div class="crop crop--16:9@md crop--fit margin-bottom-xl">
+                      <img data-src="{{ item.image }}" alt="{{ item.title }}" class="crop__content to-animate" data-animate="zoom-in">
+                    </div>
+                  </div>
+                  <div class="max-width-400">
+                    <h2>{{ item.title }}</h2>
+                    <img data-src="/img/icons/ic-divider.svg" alt="divider" class="margin-y-lg">
+                    <p>{{ item.description }}</p>
+                  </div>
+                </div>
+              {% endif %}
+
+              {% if item.background %}
+                <div class="services--grid__background">
+                  <img data-src="{{ item.background }}" alt="background">
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

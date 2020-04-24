@@ -1,0 +1,71 @@
+@charset 'utf-8';
+
+// ================================================
+// PROJECT CORE
+// ================================================
+@import '1-mixins/*.scss'; // ALREADY IMPORTED IN WEBPACK CONFIG
+@import '2-settings/*.scss'; // ALREADY IMPORTED IN WEBPACK CONFIG
+
+// ==============================================
+// FONT FACE
+// ==============================================
+// @include font-face("GoodPro", "../static/fonts/GoodPro-Book", 400, normal, woff);
+// @import url('https://fonts.googleapis.com/css?family=Be+Vietnam:300,400,600|Source+Sans+Pro:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cabin:700|Source+Sans+Pro:300,400,600,700&display=swap');
+
+// ==============================================
+// LIBRARIES
+// ==============================================
+@import "~tiny-slider/dist/tiny-slider.css";
+
+// // =============================================
+// // GENERIC -
+// // The ground zero styles. They are low-specificity and far reaching.
+// // Think about resets and normalizing our styles for cross-browser compatibility.
+// // =============================================
+@import "3-generic/generic.reset";
+
+// // // ==========================================
+// // // BASE -
+// // // Unclassed HTML elements. This is the last layer where we use type selectors.
+// // // Anything necessary to style raw elements goes in here. It doesn’t include any
+// // // class or ID selectors. It is defining the default styling for how that element
+// // // should look in all occurrences on the page.
+// // // ==========================================
+@import "4-base/*.scss";
+
+// // // ==========================================
+// // // OBJECTS -
+// // // Object oriented CSS. Begin using classes exclusively for agnostically named
+// // // noncosmetic design patterns. This layer is mostly layout-driven.
+// // // ==========================================
+@import "5-objects/*.scss";
+
+// // ==========================================================================
+// // COMPONENTS -
+// // Explicitly named designed pieces of UI. The cosmetic layer,
+// // includes more specific styling instructions.
+// // ==========================================================================
+@import "6-components/*.scss";
+
+// // ==========================================================================
+// // SCOPES -
+// // Consists out of components grouped together. They rely entirely on nesting,
+// // so make sure people are aware of this.
+// // ==========================================================================
+
+// IMPORT NEW CUSTOM FILE HERE
+@import "7-scopes/*.scss";
+
+// // ==========================================================================
+// // UTILS -
+// // Only affect one piece of the DOM at a time. These are the utility classes
+// // and usually carry !important.
+// // ==========================================================================
+@import "8-utils/*.scss";
+
+// // ==========================================================================
+// // OVERRIDES -
+// // Overrides libraries components
+// // ==========================================================================
+@import "9-overrides/*.scss";

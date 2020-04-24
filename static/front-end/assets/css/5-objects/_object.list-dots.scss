@@ -1,0 +1,29 @@
+.list-dots {
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: var(--space-lg);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: calc(var(--text-base-size) * (var(--body-line-height) - 1) / 2);
+      left: 0;
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+      border: 5px solid var(--color-primary);
+    }
+
+    .el-tooltip {
+      cursor: pointer;
+      filter: opacity(0.2) grayscale(1);
+      transition: filter 0.3s;
+
+      &:hover {
+        filter: none;
+      }
+    }
+  }
+}

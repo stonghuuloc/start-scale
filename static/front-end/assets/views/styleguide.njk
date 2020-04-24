@@ -1,0 +1,122 @@
+{% extends 'layouts/layout.njk' %}
+{% import "macros/components.njk" as components %}
+
+{% set features = [
+  {
+    icon: "/img/icons/ic-ideas.svg",
+    content: "Discover new brand ideas quickly"
+  },
+  {
+    icon: "/img/icons/ic-media.svg",
+    content: "Launch new products on social media"
+  },
+  {
+    icon: "/img/icons/ic-content.svg",
+    content: "Write compelling content"
+  },
+  {
+    icon: "/img/icons/ic-design.svg",
+    content: "Craft appealing graphic designs"
+  },
+  {
+    icon: "/img/icons/ic-photo.svg",
+    content: "Plan professional photo shoots"
+  },
+  {
+    icon: "/img/icons/ic-videos.svg",
+    content: "Create campaign videos"
+  },
+  {
+    icon: "/img/icons/ic-pages.svg",
+    content: "Manage social media pages"
+  },
+  {
+    icon: "/img/icons/ic-plans.svg",
+    content: "Write marketing plans"
+  }
+] %}
+
+{% set testimonials = {
+  content: "It took courage to try StartScale and the results are worth it! Now, I can focus on other operations while being regulary kept in the loop by their Marketing Manager on brand updates!",
+  avatar: "/img/objects/testimonials.jpg",
+  name: "James Arthur",
+  title: "Art Director"
+} %}
+
+{% block content %}
+  {% include "partials/home/1-hero.njk" %}
+
+  <section class="section">
+    <div class="section__inner container padding-y-xxxxl@lg padding-y-xxl">
+      <div class="section__heading max-width-md margin-x-auto text-center margin-bottom-xxl">
+        <h2 class="text-color-accent margin-bottom-xxl text-capitalize to-animate" data-animate="up">Section Title</h2>
+        <hr class="divider">
+      </div>
+
+      <div class="text-component max-width-md margin-x-auto">
+        <p class="text-lg font-weight-bold text-color-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacus nisi, aliquam eget volutpat egestas, vehicula at leo. Nam varius accumsan diam, sit amet vehicula eros vulputate ac. Vestibulum tincidunt ligula sit amet enim tincidunt ultrices.</p>
+        <br>
+        <p>Cras aliquet semper velit accumsan pharetra. Donec felis dui, laoreet non sem ut, fringilla tristique eros. Nunc at scelerisque arcu. Pellentesque vitae dapibus massa, id condimentum tortor. Sed quis finibus elit, non efficitur turpis. Aenean eleifend nisl urna. Duis urna nibh, placerat vel mattis ut, aliquam vitae ligula. Proin quis ligula enim. Phasellus dolor diam, aliquet vel nisl eu, hendrerit imperdiet orci. Mauris sit amet elit dolor. Cras a imperdiet est. Fusce id tellus sit amet risus consectetur aliquet at varius ligula.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section bg-default" data-theme="primary">
+    <div class="section__inner container padding-y-xxxxl@lg padding-y-xxl">
+      <div class="section__heading max-width-md margin-x-auto text-center margin-bottom-xxl">
+        <h2 class="margin-bottom-xxl text-capitalize to-animate" data-animate="up">nunc sed augue lacus <span>viverra</span></h2>
+      </div>
+
+      <div class="section__heading max-width-md margin-x-auto text-center margin-bottom-xxl">
+        <h2 class="text-color-accent margin-bottom-xxl text-capitalize to-animate" data-animate="up">Section Title Style 2</h2>
+        <hr class="divider">
+      </div>
+
+      <div class="text-component max-width-md margin-x-auto text-center">
+        <p>Cras aliquet semper velit accumsan pharetra. Donec felis dui, laoreet non sem ut, fringilla tristique eros. Nunc at scelerisque arcu. Pellentesque vitae dapibus massa, id condimentum tortor. Sed quis finibus elit, non efficitur turpis. Aenean eleifend nisl urna. Duis urna nibh, placerat vel mattis ut, aliquam vitae ligula. Proin quis ligula enim. Phasellus dolor diam, aliquet vel nisl eu, hendrerit imperdiet orci. Mauris sit amet elit dolor. Cras a imperdiet est. Fusce id tellus sit amet risus consectetur aliquet at varius ligula.</p>
+        <br>
+        <p>Eget arcu dictum varius duis at consectetur lorem donec. Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Nisi quis eleifend quam adipiscing vitae proin sagittis nisl. Sit amet nisl purus in mollis.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section">
+    <div class="section__inner container padding-y-xxxxl@lg padding-y-xxl">
+      <div class="section__heading max-width-md margin-x-auto text-center margin-bottom-xxl">
+        <h2 class="text-color-accent margin-bottom-xxl text-capitalize to-animate" data-animate="up">Feature Items</h2>
+        <hr class="divider">
+      </div>
+
+      <div class="max-width-md margin-x-auto">
+        <div class="grid grid-gap-xl@lg grid-gap-md">
+          {% for item in features %}
+            <div class="col-3@lg col-6">
+              {{ components.feature_item(item.icon, item.content) }}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section__inner container padding-y-xxxxl@lg padding-y-xxl">
+      <div class="section__heading max-width-md margin-x-auto text-center margin-bottom-xxl">
+        <h2 class="text-color-accent margin-bottom-xxl text-capitalize to-animate" data-animate="up">Testimonials Item</h2>
+        <hr class="divider">
+      </div>
+
+      {{ components.testimonials_item_extend(testimonials.content, testimonials.avatar, testimonials.name, testimonials.title) }}
+
+      <div class="grid grid-gap-xl margin-top-xl">
+        {% for item in range(0, 3) %}
+          <div class="col-4@lg">
+            {{ components.testimonials_item_compact(testimonials.content, testimonials.avatar, testimonials.name, testimonials.title) }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

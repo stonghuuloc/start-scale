@@ -1,0 +1,201 @@
+// --------------------------------
+
+// (START) Global Editor code https://codyhouse.co/ds/globals/colors
+
+// --------------------------------
+
+:root {
+  --btn-font-size: 1em;
+  --btn-padding-x: var(--space-md);
+  --btn-padding-y: var(--space-unit);
+  --btn-radius: 22px;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  white-space: nowrap;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  outline: none;
+  border: none;
+  border-radius: var(--btn-radius);
+  background-color: var(--color-primary);
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+
+  @include fontSmooth;
+
+  &:hover {
+    background-color: var(--color-primary-dark);
+    cursor: pointer;
+    color: var(--color-white);
+    box-shadow: none;
+  }
+}
+
+// themes
+.btn--primary {
+  cursor: pointer;
+  background-color: var(--color-accent);
+
+  &:hover {
+    background-color: var(--color-accent-darker);
+  }
+}
+
+.btn--subtle {
+  // background-color: var(--color-contrast-lower);
+  // color: var(--color-contrast-higher);
+  // border: 2px solid var(--color-contrast-lower);
+
+  // &:hover {
+  //   background-color: var(--color-contrast-lower);
+  //   color: var(--color-contrast-higher);
+  //   border: 2px solid transparent;
+  // }
+}
+
+.btn--accent {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid alpha(var(--color-primary), 0.45);
+
+  &:hover {
+    color: var(--color-white);
+    border: 2px solid var(--color-primary);
+  }
+}
+
+// feedback
+.btn--disabled {
+  opacity: 0.6;
+  background-color: var(--color-contrast-high) !important;
+  color: var(--color-white) !important;
+  cursor: not-allowed !important;
+
+  &:hover {
+    background-color: var(--color-contrast-high);
+  }
+}
+
+// size
+.btn--sm {
+  --btn-padding-x: var(--space-unit);
+  --btn-padding-y: var(--space-xs);
+}
+
+.btn--md {
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+.btn--lg {
+  padding-left: var(--space-xl);
+  padding-right: var(--space-xl);
+}
+
+// --------------------------------
+
+// (END) Global Editor Code
+
+// --------------------------------
+
+// =====================
+// CUSTOM
+// =====================
+[data-theme="dark"] .btn {
+  &.btn--primary {
+    color: var(--color-primary);
+    background-color: var(--color-accent);
+
+    &:hover {
+      background-color: var(--color-accent-dark);
+    }
+  }
+
+  &.btn--accent {
+    color: var(--color-primary);
+    background-color: transparent;
+
+    &:hover {
+      color: var(--color-primary);
+      border-color: var(--color-accent-dark);
+      background-color: var(--color-accent-dark);
+    }
+  }
+}
+
+.btn + .btn {
+  margin-left: var(--space-md);
+}
+
+.btn--icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  color: currentColor;
+  font-weight: bold;
+  border: 0;
+  box-shadow: none;
+  // background: unset;
+  // border: 1px solid var(--color-contrast-lower);
+
+  &.btn--lg {
+    width: 72px;
+    height: 72px;
+  }
+
+  &.btn--sm {
+    padding: 2%;
+    width: 24px;
+    height: 24px;
+  }
+
+  &.btn--disabled {
+    filter: grayscale(1);
+  }
+
+  &.btn--adaptive {
+    @include breakpoint(md, 'not all') {
+      padding: var(--space-xs);
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+.btn--outline {
+  border: 1px solid var(--color-primary);
+
+  &.btn--disabled {
+    border-color: var(--color-contrast-low);
+  }
+}
+
+.btn--accent.btn--outline {
+  background-color: transparent;
+  border-color: var(--color-contrast-low);
+
+  > .btn__iconLabel .icon {
+    color: var(--color-primary);
+  }
+}
+
+.btn--wide.btn--icon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn.reset:focus {
+  outline: none;
+}

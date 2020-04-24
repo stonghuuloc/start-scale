@@ -1,0 +1,85 @@
+// -----------------------------------------
+:root {
+  --base-border-width: 1px;
+}
+
+.outline-none { display: none !important; }
+
+.border-between::after {
+  content: '';
+  border-right: 1px solid var(--color-contrast-lower);
+  margin-right: var(--space-md);
+  padding-right: var(--space-md);
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+  @include breakpoint($breakpoint, "not all") {
+    .has-border#{$infix} { border: none !important; }
+  }
+
+  @include breakpoint($breakpoint) {
+    .border#{$infix} { border: var(--base-border-width) solid !important; }
+    .border-top#{$infix} { border-top: var(--base-border-width) solid !important; }
+    .border-right#{$infix} { border-right: var(--base-border-width) solid !important; }
+    .border-bottom#{$infix} { border-bottom: var(--base-border-width) solid !important; }
+    .border-left#{$infix} { border-left: var(--base-border-width) solid !important; }
+
+    //
+    // BORDER RADIUS
+    //
+    .rounded-sm#{$infix} {
+      border-radius: var(--radius-sm) !important;
+    }
+
+    .rounded#{$infix} {
+      border-radius: var(--radius) !important;
+    }
+
+    .rounded-top#{$infix} {
+      border-top-left-radius: var(--radius) !important;
+      border-top-right-radius: var(--radius) !important;
+    }
+
+    .rounded-right#{$infix} {
+      border-top-right-radius: var(--radius) !important;
+      border-bottom-right-radius: var(--radius) !important;
+    }
+
+    .rounded-bottom#{$infix} {
+      border-bottom-right-radius: var(--radius) !important;
+      border-bottom-left-radius: var(--radius) !important;
+    }
+
+    .rounded-left#{$infix} {
+      border-top-left-radius: var(--radius) !important;
+      border-bottom-left-radius: var(--radius) !important;
+    }
+
+    .rounded-lg#{$infix} {
+      border-radius: var(--radius-lg) !important;
+    }
+
+    .rounded-xl#{$infix} {
+      border-radius: var(--radius-xl) !important;
+    }
+
+    .rounded-circle#{$infix} {
+      border-radius: 50% !important;
+    }
+
+    .rounded-0#{$infix} {
+      border-radius: 0 !important;
+    }
+
+    .has-no-border#{$infix} { border: none !important; }
+  }
+}
+
+// BORDER COLOR
+.border-primary { border-color: var(--color-primary) !important; }
+.border-accent { border-color: var(--color-accent) !important; }
+.border-default { border-color: var(--color-contrast-lower) !important; }
+.border-contrast-low { border-color: var(--color-contrast-low) !important; }
+.border-gray { border-color: #f2f2f2 !important; }

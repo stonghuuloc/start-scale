@@ -1,0 +1,13 @@
+/////////////////////////
+//
+// BASE
+//
+// Unclassed HTML elements. This is the last layer where we use type selectors.
+// Anything necessary to style raw elements goes in here.
+// It doesn’t include any class or ID selectors. It is defining the default
+// styling for how that element should look in all occurrences on the page.
+//
+/////////////////////////
+
+// IMPORT NEW CUSTOM FILE HERE
+@import "base.page";

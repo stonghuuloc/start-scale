@@ -1,0 +1,107 @@
+// --------------------------------
+
+// Typography
+
+// --------------------------------
+.text-fade-wrapper {
+  position: relative;
+  height: calc(var(--text-base-size) * 3); /* exactly 3 lines */
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    text-align: center;
+    position: absolute;
+    bottom: -50%;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+  }
+}
+
+// --------------------------------
+.text-color-default { color: var(--color-contrast-higher) !important; }
+.text-color-primary { color: var(--color-primary) !important; }
+.text-color-primary-dark { color: var(--color-primary-dark) !important; }
+.text-color-primary-darker { color: var(--color-primary-darker) !important; }
+.text-color-accent { color: var(--color-accent) !important; }
+.text-color-white { color: var(--color-white) !important; }
+.text-color-black { color: var(--color-black) !important; }
+.text-color-gray { color: var(--color-contrast-low) !important; }
+.text-dim { opacity: 0.5 !important; }
+
+.truncate,
+.text-truncate { // truncate text if it exceeds its parent
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.text-replace { // replace text with img
+  overflow: hidden !important;
+  color: transparent !important;
+  text-indent: 100% !important;
+  white-space: nowrap !important;
+}
+
+$textSizers: (
+  xs: var(--text-xs),
+  sm: var(--text-sm),
+  md: var(--text-md),
+  lg: var(--text-lg),
+  xl: var(--text-xl),
+  xxl: var(--text-xxl),
+  xxxl: var(--text-xxxl),
+  xxxxl: var(--text-xxxxl)
+);
+
+// text alignment
+@each $breakpoint in map-keys($breakpoints) {
+  @include breakpoint($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+    .text-center#{$infix} { text-align: center !important; }
+    .text-left#{$infix} { text-align: left !important; }
+    .text-right#{$infix} { text-align: right !important; }
+
+    .font-weight-light#{$infix} { font-weight: 300 !important; }
+    .font-weight-normal#{$infix} { font-weight: 400 !important; }
+    .font-weight-medium#{$infix} { font-weight: 500 !important; }
+    .font-weight-semi#{$infix} { font-weight: 600 !important; }
+    .font-weight-bold#{$infix} { font-weight: 700 !important; }
+
+    @each $size, $length in $textSizers {
+      .text-#{$size}#{$infix} { font-size: $length !important; }
+    }
+
+    .text-nowrap#{$infix} { white-space: nowrap !important; }
+  }
+}
+
+// Alignment
+.text-justify { text-align: justify !important; }
+
+// font family
+.font-primary { font-family: var(--font-primary) !important; }
+.font-heading { font-family: var(--font-heading) !important; }
+//
+.font-secondary {
+  font-family: var(--font-secondary) !important;
+  font-weight: normal !important;
+}
+
+// Transformation
+.text-lowercase { text-transform: lowercase !important; }
+.text-uppercase { text-transform: uppercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+
+// Weight and italics
+.font-italic { font-style: italic !important; }
+
+// text letter-spacing
+.text-tight-1 { letter-spacing: -0.025em !important; }
+.text-tight-2 { letter-spacing: -0.05em !important; }
+.text-mega-1 { letter-spacing: 0.125em !important; }
+.text-mega-2 { letter-spacing: 0.25em !important; }
+
+.text-decoration-none { text-decoration: none !important; }

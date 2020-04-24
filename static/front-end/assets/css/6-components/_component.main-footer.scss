@@ -1,0 +1,143 @@
+/* --------------------------------
+
+File#: _1_main-footer
+Title: Main Footer
+Descr: Footer navigation
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.main-footer { position: relative; }
+
+.main-footer__content {
+  font-size: var(--text-sm);
+
+  @include breakpoint(md) { // align logo + nav
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.main-footer__logo {
+  flex-shrink: 0;
+  margin-bottom: var(--space-md);
+
+  a,
+  svg,
+  img {
+    width: 130px;
+    height: 32px;
+    display: block;
+  }
+}
+
+.main-footer__nav {
+  @include breakpoint(md) {
+    width: calc(100% - 420px);
+  }
+
+  @include breakpoint(lg) {
+    width: auto;
+  }
+}
+
+.main-footer__nav-list { // ul
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.main-footer__nav-item {
+  display: grid;
+  grid-gap: var(--space-xxs);
+  width: 100%;
+  padding-right: var(--space-sm);
+
+  &:not(:last-child) {
+    margin-bottom: var(--space-md);
+  }
+
+  @include breakpoint(xs) {
+    width: 50%;
+  }
+
+  @include breakpoint(lg) {
+    grid-gap: var(--space-xs);
+    width: 240px;
+  }
+}
+
+// .main-footer__nav-item a { // footer nav link
+//   // color: var(--color-contrast-medium);
+
+//   // &:hover {
+//   //   color: var(--color-contrast-high);
+//   // }
+
+//   // @include breakpoint(lg) {
+//   //   font-size: 0.9em;
+//   // }
+// }
+
+// colophon
+// .main-footer__colophon {
+//   background-color: var(--color-bg);
+//   // border-top: 1px solid var(--color-contrast-low);
+//   padding: var(--space-md) var(--container-padding);
+//   // margin-top: var(--space-md);
+//   // display: flex;
+//   // justify-content: center;
+//   // flex-wrap: wrap;
+//   // align-items: center;
+
+//   @include breakpoint(md) {
+//     justify-content: space-between;
+//   }
+// }
+
+.main-footer__colophon-nav {
+  font-size: var(--text-sm);
+  color: alpha(var(--color-contrast-higher), 0.5);
+  margin-right: var(--space-sm);
+
+  > * {
+    margin-right: var(--space-xxs);
+  }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: var(--color-contrast-high);
+    }
+  }
+}
+
+.main-footer__socials {
+  display: flex;
+  margin: var(--space-xxs) 0;
+
+  > * {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: inherit;
+    // width: 48px;
+    // height: 48px;
+    // color: var(--color-accent);
+    border-radius: 0;
+    // background-color: var(--color-primary);
+
+    &:not(:last-child) {
+      margin-right: var(--space-md);
+    }
+
+    svg {
+      display: block;
+      // width: 1.5em;
+      // height: 1.5em;
+      color: inherit;
+    }
+  }
+}

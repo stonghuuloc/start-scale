@@ -1,0 +1,38 @@
+{% macro feature_item(icon, content) %}
+  <div class="feature-item rounded-lg bg-white" data-theme="default">
+    <img data-src="{{ icon }}" alt="feature" class="margin-bottom-md">
+    <p>{{ content }}</p>
+  </div>
+{% endmacro %}
+
+{% macro testimonials_item_extend(content, avatar, author_name, author_title) %}
+  <div class="testimonials-item testimonials-item--extend bg-white" data-theme="default">
+    <div class="max-width-md margin-x-auto">
+      <p class="text-lg font-weight-bold text-color-black">{{ content }}</p>
+
+      <div class="testimonials__author">
+        <img data-src="{{ avatar }}" alt="" class="rounded-circle">
+
+        <div class="text-component">
+          <p class="font-weight-bold text-color-black">{{ author_name }}</p>
+          <p>{{ author_title }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro testimonials_item_compact(content, avatar, author_name, author_title) %}
+  <div class="testimonials-item testimonials-item--compact bg-white" data-theme="default">
+    <p>{{ content }}</p>
+
+    <div class="testimonials__author">
+      <img data-src="{{ avatar }}" alt="" class="rounded-circle">
+
+      <div class="text-component">
+        <p class="font-weight-bold text-color-black">{{ author_name }}</p>
+        <p>{{ author_title }}</p>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

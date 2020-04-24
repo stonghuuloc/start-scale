@@ -1,0 +1,16 @@
+.list-horizon {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: auto;
+  flex-direction: row;
+  touch-action: auto;
+}
+
+// @include breakpoint(md) {
+//   .list-horizon {
+//     flex-wrap: wrap;
+//     justify-content: flex-end;
+//     -webkit-overflow-scrolling: none;
+//   }
+// }

@@ -1,0 +1,112 @@
+// classes used to center content on x-axis and set content max width
+.container {
+  width: calc(100% - 2 * var(--component-padding));
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint(sm) {
+    max-width: var(--max-width-xs);
+  }
+
+  @include breakpoint(md) {
+    max-width: var(--max-width-sm);
+  }
+
+  @include breakpoint(lg) {
+    max-width: var(--max-width-md);
+  }
+
+  @include breakpoint(xl) {
+    max-width: var(--max-width-lg);
+  }
+
+  @include breakpoint(xxl) {
+    max-width: var(--max-width-xl);
+  }
+}
+
+// --------------------------------
+
+// Grid system
+
+// --------------------------------
+
+$grid-columns: 12;
+
+.grid {
+  /* stylelint-disable length-zero-no-unit */
+  // --grid-gap: 0px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+  @include breakpoint($breakpoint) {
+    // set gap
+    @each $size, $length in $spacers {
+      @if ($size != 'auto') {
+        .grid-gap-x-#{$size}#{$infix},
+        .grid-gap-#{$size}#{$infix} {
+          margin-right: calc(-1 * #{$length} / 2);
+          margin-left: calc(-1 * #{$length} / 2);
+
+          > * {
+            padding-right: calc(#{$length} / 2);
+            padding-left: calc(#{$length} / 2);
+          }
+        }
+
+        .grid-gap-y-#{$size}#{$infix},
+        .grid-gap-#{$size}#{$infix} {
+          margin-bottom: calc(-1 * #{$length});
+
+          > * {
+            padding-bottom: $length;
+          }
+        }
+      }
+    }
+
+    .col#{$infix} { // auto-sized column
+      @include autoSizedColumn;
+    }
+
+    @for $i from 1 through $grid-columns {
+      .col-#{$i}#{$infix} {
+        flex-basis: calc(#{round-width($i)} - 0.01px);
+        max-width: calc(#{round-width($i)} - 0.01px);
+      }
+
+      .order-#{$i - 1}#{$infix} { order: $i; }
+    }
+
+    .row--reverse#{$infix} {
+      flex-direction: row-reverse;
+    }
+
+    .order-first#{$infix} { order: -1; }
+
+    .order-last#{$infix} { order: $grid-columns + 1; }
+  }
+}
+
+/* .debug can be added to a grid to visualize its effective cells */
+.grid--debug > * {
+  --color: rgba(248, 110, 91, 0.3);
+
+  background-image: linear-gradient(to bottom, var(--color) 0%, var(--color) 100%);
+}
+.grid--debug > :nth-child(6n+2) { --color: rgba(103, 126, 208, 0.3); }
+.grid--debug > :nth-child(6n+3) { --color: rgba(224, 174, 72, 0.3); }
+.grid--debug > :nth-child(6n+4) { --color: rgba(77, 214, 115, 0.3); }
+.grid--debug > :nth-child(6n+5) { --color: rgba(217, 103, 219, 0.3); }
+.grid--debug > :nth-child(6n+6) { --color: rgba(94, 204, 211, 0.3); }
+.grid--debug > :nth-child(6n+7) { --color: rgba(248, 110, 91, 0.3); }

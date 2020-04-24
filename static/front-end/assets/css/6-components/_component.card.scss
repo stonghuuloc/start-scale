@@ -1,0 +1,114 @@
+/* --------------------------------
+
+Title: Card
+Descr: Container of information used as teasers for further content, often displayed in a gallery of related items
+
+-------------------------------- */
+
+.card:not(.card--article) {
+  @include breakpoint(lg, 'not all') {
+    > .card__inner {
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.13);
+    }
+  }
+
+  @include breakpoint(lg) {
+    &:hover > .card__inner {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.13);
+    }
+  }
+
+  .card__body {
+    padding: var(--space-md);
+  }
+}
+
+.card--unborderd {
+  border: none;
+}
+
+.card--article {
+  .article__title {
+    color: var(--color-contrast-higher);
+  }
+
+  @include breakpoint(lg, 'not all') {
+    .card__body {
+      padding: var(--space-md);
+    }
+  }
+
+  @include breakpoint (lg) {
+    > .card__inner {
+      border: 0;
+      border-radius: 0;
+      border-top: 2px solid var(--color-contrast-lower);
+    }
+
+    &:hover > .card__inner {
+      border-color: var(--color-primary);
+
+      .article__title {
+        color: var(--color-primary);
+      }
+    }
+
+    .card__body {
+      padding-top: var(--space-md);
+      padding-right: var(--space-xl);
+    }
+  }
+
+  &.card--FeaturedArticle {
+    > .card__inner {
+      border: 0;
+      border-radius: 0;
+    }
+  }
+
+  &.card--articleWithImage {
+    > .card__inner {
+      border: 0;
+      border-radius: 0;
+      border-top: 2px solid var(--color-contrast-lower);
+    }
+
+    &:hover > .card__inner {
+      border-color: var(--color-primary);
+
+      .article__title {
+        color: var(--color-primary);
+      }
+    }
+
+    .card__body {
+      padding-top: var(--space-md);
+      padding-right: var(--space-xl);
+    }
+
+    @include breakpoint(lg, 'not all') {
+      .card__body {
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.card__inner {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-contrast-lower);
+  background-color: var(--color-bg);
+  transition: all 0.3s ease-in-out;
+
+  // padding: var(--space-lg);
+
+  // @include breakpoint(md) {
+  //   padding: var(--space-xl);
+  // }
+}

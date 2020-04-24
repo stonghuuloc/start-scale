@@ -1,0 +1,49 @@
+.bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: none;
+  background-size: cover;
+  background-position: top center;
+}
+
+.bg-wrapper--size25 {
+  width: 25%;
+}
+
+.bg-wrapper--size50 {
+  width: 50%;
+}
+
+.bg-wrapper--size75 {
+  width: 75%;
+}
+
+.bg-wrapper--right {
+  left: auto;
+  right: 0;
+}
+
+.bg-wrapper--overlayer {
+  &::before {
+    content: '';
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgba(000, 000, 000, 0), rgba(000, 000, 000, 0.2) 50%);
+    z-index: 0;
+  }
+}
+
+.bg-wrapper--center {
+  background-position: center center;
+}
+
+.bg-wrapper--static {
+  position: static;
+}

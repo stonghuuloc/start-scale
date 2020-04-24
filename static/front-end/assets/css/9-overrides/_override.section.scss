@@ -1,0 +1,12 @@
+.section__heading .divider {
+  display: block;
+  width: 149px;
+  margin: 0 auto;
+  border-width: 2px;
+  border-color: var(--color-accent);
+  border-radius: var(--radius-sm);
+}
+
+.section__heading span {
+  color: var(--color-primary);
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>inFocus</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <!--
+      Icons for different devices you can generate with - http://realfavicongenerator.net
+      Place generated files in the dev/static/favicons directory.
+    -->
+    <!-- favicon --> 
+    {# <link rel="favicon icon" sizes="16x16 24x24 32x32 48x48 64x64 96x96" href="./static/favicon.ico"> #}
+    <!-- end favicon -->
+    
+    <!-- Social Media -->
+    <meta property='og:title' content='Cardfinder' />
+    <meta property='og:type' content='article' />
+    <meta property='og:image' content='/img/' />
+    <meta property='og:url' content='' />
+    <meta property='og:description' content='' />
+    <!-- <meta property='fb:admins' content='USER_ID' /> -->
+    
+    <!-- Twitter Cards -->
+    <meta name='twitter:card' content='summary'>
+    <meta name='twitter:url' content=''>
+    <meta name='twitter:title' content='Cardfinder'>
+    <meta name='twitter:description' content=''>
+    <meta name='twitter:image' content='/img/'>
+
+    {# <link rel="preload" href="https://www.youtube.com/iframe_api" as="script"> #}
+    {# <script type="text/javascript" src="https://www.youtube.com/iframe_api" async></script> #}
+    <link rel="preload" href="css/main.css" as="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  
+  <body>
+    <div id="app">
+      <div ref="layout" id="layout">
+        {% include "./header.njk" %}
+        <main>
+          {% block content %}
+          {% endblock %}
+        </main>
+        {% include "./footer.njk" %}
+      </div>
+    </div>
+    <!-- NOTE: prior to v2.2.1 tiny-slider.js need to be in <body> -->
+    {# <script src="./js/scripts.js"></script> #}
+    <!-- <script src="./js/secondary.js"></script> -->
+    <script type="text/javascript" src="/js/util.js"></script>
+  </body>
+
+</html>

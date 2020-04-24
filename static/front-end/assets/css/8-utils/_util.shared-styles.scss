@@ -1,0 +1,222 @@
+/////////////////////////
+//
+// Utilities
+//
+// - Set very specific rules classes
+//
+/////////////////////////
+
+/////////////////////////
+// Positions
+$positions: static, relative, absolute, fixed, sticky !default;
+// Common values
+@each $position in $positions {
+  .position-#{$position} { position: $position !important; }
+}
+
+.top-0 { top: 0 !important; }
+.right-0 { right: 0 !important; }
+.bottom-0 { bottom: 0 !important; }
+.left-0 { left: 0 !important; }
+.z-index-n-1 { z-index: -1 !important; }
+
+// Elements
+@each $breakpoint in map-keys($breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+  @include breakpoint($breakpoint) {
+    .overflow-hidden#{$infix} { overflow: hidden !important; }
+
+    .shadow-all#{$infix} { box-shadow: var(--shadow-md) !important; }
+  }
+}
+.overflow-visible { overflow: visible !important; }
+.overflow-auto { overflow: auto !important; }
+.vertical-middle { vertical-align: middle !important; }
+
+.float-right { float: right !important; }
+.float-left { float: left !important; }
+.clearfix { clear: both !important; }
+
+// Animate
+.to-animate {
+  opacity: 0;
+}
+
+[data-animate="image"] {
+  position: relative;
+  overflow: hidden;
+
+  > .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 200%;
+    background-color: var(--color-bg);
+    z-index: 1;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 50%;
+      background-color: var(--color-primary);
+      // background-color: alpha(var(--color-primary-lighter), 0.5);
+    }
+  }
+}
+
+.line {
+  position: relative;
+  // overflow: hidden;
+}
+
+.animate-draw,
+.animate-drawline {
+  stroke: alpha-hsl(var(--color-contrast-higher), 0.5);
+  stroke-miterlimit: 5;
+
+  path {
+    opacity: 0;
+  }
+
+  &.animated path {
+    opacity: 1;
+    fill-opacity: 0;
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+.animate-draw.animated path {
+  animation-name: draw-line, fade-stroke, fill-in;
+  animation-duration: 3s, 1s, 1s;
+  animation-delay: 0s, 1s, 1s;
+}
+
+.animate-drawline.animated path {
+  animation-name: draw-line;
+  animation-duration: 3s;
+  animation-delay: 0s;
+}
+
+// Shadow
+// .shadow-top { box-shadow: 0 -15px 15px -15px var(--shadow-md) !important; }
+// .shadow-right { box-shadow: 15px 0 15px -15px var(--shadow-md) !important; }
+// .shadow-bottom { box-shadow: 0 15px 15px -15px var(--shadow-md) !important; }
+// .shadow-left { box-shadow: -15px 0 15px -15px var(--shadow-md) !important; }
+
+// Images
+.filter-gray { filter: grayscale(100%) !important; }
+
+.order-top {
+  position: relative;
+  z-index: 2 !important;
+}
+
+hr {
+  border: 0.5px solid var(--color-contrast-lower);
+
+  [data-theme="accent"] & {
+    border-color: var(--color-contrast-low);
+  }
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.absolute-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.object-fit-cover {
+  object-fit: cover !important;
+}
+
+.featured-heading {
+  color: var(--color-accent);
+
+  > span {
+    color: var(--color-primary);
+  }
+}
+
+.icon {
+  fill: currentColor;
+}
+
+.list--contact {
+  list-style: none;
+  padding: 0 !important;
+
+  li:not(:last-child) {
+    margin-bottom: var(--space-xs);
+  }
+
+  // li {
+  //   position: relative;
+  //   padding-left: var(--space-md);
+
+  //   > img {
+  //     position: absolute;
+  //     top: calc(1em * var(--body-line-height) / 2);
+  //     left: 0;
+  //     transform: translateY(-50%);
+  //   }
+  // }
+}
+
+.list--contact-icons {
+  li {
+    position: relative;
+    padding-left: calc(var(--space-lg) + var(--space-xs));
+
+    > img {
+      position: absolute;
+      top: calc(1em * var(--body-line-height) / 2);
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.text-dot::after {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: #dfe0e4;
+  border-radius: 50%;
+  margin: 0 5px 3px;
+}
+
+.bg-none {
+  background: none !important;
+}
+
+.shadow-none {
+  box-shadow: none !important;
+}
+
+.border-width-2 {
+  border-width: 2px !important;
+}
+
+.video-wrapper > iframe {
+  width: 100%;
+  height: 100%;
+  // object-fit: cover;
+}

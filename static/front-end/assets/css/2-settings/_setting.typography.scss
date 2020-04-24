@@ -1,0 +1,115 @@
+// --------------------------------
+
+// (START) Global Editor code https://codyhouse.co/ds/globals/typography
+
+// --------------------------------
+
+:root {
+  // font family
+  --font-primary: sans-serif;
+  --font-heading: sans-serif;
+  --font-secondary: sans-serif;
+
+  // body font size
+  --text-base-size: 16px;
+
+  // type scale
+  --text-scale-ratio: 1.316074012952492;
+  --text-xs: calc(0.75 * var(--text-base-size));
+  --text-sm: calc(0.875 * var(--text-base-size));
+  --text-md: calc(1.125 * var(--text-base-size));
+  --text-lg: calc(var(--text-base-size) * var(--text-scale-ratio));
+  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
+  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+  --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio) * var(--text-scale-ratio));
+
+  // line-height
+  --body-line-height: 1.5;
+  --heading-line-height: 1.2;
+
+  // capital letters - used in combo with the lhCrop mixin
+  --font-primary-capital-letter: 1;
+  --font-heading-capital-letter: 1;
+}
+
+@supports (--css: variables) {
+  :root {
+    @include breakpoint(md) {
+      --text-base-size: 18px;
+      --text-scale-ratio: 1.404288643537843;
+    }
+  }
+
+  .fonts-loaded {
+    --font-primary: 'Source Sans Pro', sans-serif;
+    --font-heading: 'Cabin', sans-serif;
+    --font-secondary: 'Source Sans Pro', sans-serif;
+  }
+}
+
+// [data-theme] { color: alpha(var(--color-contrast-higher), 0.7); }
+
+// --------------------------------
+
+// (END) Global Editor Code
+
+// --------------------------------
+mark {
+  background-color: alpha(var(--color-accent), 0.2);
+  color: inherit;
+}
+
+.text-component {
+  --line-height-multiplier: 1;
+  --text-vspace-multiplier: 1;
+
+  blockquote {
+    padding-left: 1em;
+    border-left: 4px solid var(--color-contrast-low);
+  }
+
+  hr {
+    background: var(--color-contrast-low);
+    height: 1px;
+  }
+
+  figcaption {
+    font-size: var(--text-sm);
+    color: var(--color-contrast-medium);
+  }
+
+  a:not(.btn) {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+}
+
+a,
+.link {
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: currentColor;
+  }
+}
+
+span {
+  color: inherit;
+  font: inherit;
+}
+
+label {
+  color: var(--color-contrast-higher);
+  font-family: var(--font-primary);
+  font-size: var(--text-base-size);
+  font-weight: 500;
+}
+
+button {
+  font: inherit;
+}
