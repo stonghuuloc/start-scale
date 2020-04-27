@@ -41,7 +41,8 @@ import "./libs/_2_hiding-nav";
 import "./libs/_1_tabs";
 // -------------------------
 import initAnimation from "./utils/animationHandler";
-import initProductSliders from './components/products-slider';
+import initFeaturesliders from './components/features-slider';
+import initSupportliders from './components/support-slider';
 
 import "assets/css/main.scss";
 
@@ -62,7 +63,8 @@ import "assets/css/main.scss";
 
   // init custom libs
   initAnimation();
-  initProductSliders();
+  initFeaturesliders();
+  initSupportliders();
 
   // Hero scroll parallax
   const controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: 'onEnter', duration: '200%'}});

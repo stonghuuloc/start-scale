@@ -1,0 +1,92 @@
+{% set testimonials = {
+  content: "It took courage to try StartScale and the results are worth it! Now, I can focus on other operations while being regulary kept in the loop by their Marketing Manager on brand updates!",
+  avatar: "/img/objects/testimonials.jpg",
+  name: "James Arthur",
+  title: "Art Director"
+} %}
+
+{% set support = [
+  {
+    title: "Get unstuck with pro marketing help",
+    content: "StartScale’s professional Marketing Managers have 10+ years’ experience listening to business needs, crafting strategies, and delivering results.<br><br>Put one of our talented pros in charge of your marketing and unlock the key to solid brand positioning and digital strategy.",
+    image: "/img/objects/unstuck.svg"
+  },
+  {
+    title: "Your design quality matters",
+    content: "We are all visual creatures. That’s why StartScale cares so much about design quality. We developed an in-house design system to ensure our creations speak your brand language.<br><br>Besides audience targeting, we are particularly focused on how design and copywriting converge to fuel brand growth.",
+    image: "/img/objects/design.svg"
+  },
+  {
+    title: "Pay as you grow",
+    content: "You have the freedom and flexibility to choose when and how you want to generate growth. Any time you need custom content like a poster or photo shoot, simply add the service to your marketing campaign from our private marketplace.<br><br>Scale when it suits you and stay within your budget.",
+    image: "/img/objects/pay.svg"
+  },
+  {
+    title: "Live chat support on any device ",
+    content: "You can always count on us to take care of you. As former brand managers, we know it’s hard to tap into the consumer mind.<br><br>Whether you want to share excitement or need a problem solved, connect with us via live chat and you will always be heard, understood, and treated with care.",
+    image: "/img/objects/chat.svg"
+  }
+] %}
+
+<section class="section">
+  <div class="section__innner container padding-y-xxxl@lg padding-y-xl">
+    <div class="section__heading max-width-md margin-x-auto text-center margin-bottom-xxl">
+      <h2 class="text-color-accent margin-bottom-xxl to-animate" data-animate="up">#yourmarketingsupport</h2>
+      <hr class="divider">
+    </div>
+
+    <div class="text-component max-width-md margin-x-auto margin-bottom-xxxl@lg margin-bottom-xl to-animate" data-animate="up">
+      <p class="text-lg font-weight-bold text-color-black">We know the challenge to create compelling content in a competitive digital landscape has left many businesses feeling lost and at the expenses of their budget.</p>
+      <br>
+      <p>That’s why we connect you with an expert Marketing Manager (personally verified by us – marketers with 10+ years’ experience) who will guide your content creation, on budget, on time.<br>Get same-day consultation and messaging (powered by Flock collaboration tool) for a wide range of digital marketing services.<br>Give your business a helping hand. Chat with a Marketing Manager today!</p>
+    </div>
+
+    <div class="testimonials-item testimonials-item--extend margin-bottom-xxxl@md margin-bottom-lg bg-white to-animate" data-animate="up" data-theme="default">
+      <p class="text-lg font-weight-bold text-color-black">{{ testimonials.content }}</p>
+
+      <div class="testimonials__author">
+        <img data-src="{{ testimonials.avatar }}" alt="" class="rounded-circle">
+
+        <div class="text-component">
+          <p class="font-weight-bold text-color-black">{{ testimonials.name }}</p>
+          <p>{{ testimonials.title }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="slider-support" class="slider-wrapper support-wrapper padding-bottom-xl">
+      <div class="tns-slider">
+        {% for item in support %}
+          <div class="slider-item">
+            <div class="support-item max-width-md margin-x-auto">
+              <div class="grid grid-gap-xxxl@md grid-gap-lg">
+                <div class="col-8@md order-first@md order-last">
+                  <p class="support__title display@md"><span></span>{{ item.title }}</p>
+                  <p>{{ item.content | safe }}</p>
+                </div>
+                <div class="col-4@md">
+                  <p class="support__title hide@md"><span></span>{{ item.title }}</p>
+                  <div class="margin-0@md margin-x-lg">
+                    <div class="crop crop--fit">
+                      <img data-src="{{ item.image }}" alt="{{ item.title }}" class="crop__content crop__content-contain">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="tns-controls">
+        <button class="btn--slider prev">
+          <img data-src="/img/icons/ic-prev.svg" alt="prev">
+        </button>
+
+        <button class="btn--slider next">
+          <img data-src="/img/icons/ic-next.svg" alt="next">
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

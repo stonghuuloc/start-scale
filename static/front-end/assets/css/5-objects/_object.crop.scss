@@ -133,6 +133,10 @@
         object-fit: cover;
         width: 100%;
         height: 100%;
+
+        &.crop__content-contain {
+          object-fit: contain;
+        }
       }
     }
 
@@ -148,6 +152,10 @@
 
         .crop--#{$crop-name}#{$infix} {
           padding-bottom: ($consequent/$antecedent) * 100%;
+
+          &.crop--halfOffset {
+            margin-bottom: (($consequent / -2 )/ $antecedent) * 100%;
+          }
         }
       }
     }
@@ -169,5 +177,9 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
+
+    &.crop__content-contain {
+      object-fit: contain;
+    }
   }
 }

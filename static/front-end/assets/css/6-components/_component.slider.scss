@@ -76,23 +76,24 @@
 
 .tns-nav {
   position: absolute;
-  bottom: var(--n-space-lg);
+  bottom: 0;
   left: 50%;
   display: inline-flex;
   align-items: center;
   // margin: 0 rem(44);
   // height: 25px;
-  transform: translate(-50%, 100%);
+  transform: translate(-50%, 0);
 
   > * {
     cursor: pointer;
     display: inline-block;
     margin: 8px;
-    width: 40px;
-    height: 4px;
+    width: 20px;
+    height: 20px;
     outline: none !important;
-    border-radius: 100px;
-    background-color: alpha(var(--color-primary), 0.3);
+    border-radius: 50%;
+    background-color: var(--color-contrast-low);
+    transition: background-color 0.3s;
 
     &:hover,
     &.tns-nav-active {

@@ -1,0 +1,87 @@
+{% set features = [
+  {
+    icon: "/img/icons/ic-ideas.svg",
+    content: "Discover new brand ideas quickly"
+  },
+  {
+    icon: "/img/icons/ic-media.svg",
+    content: "Launch new products on social media"
+  },
+  {
+    icon: "/img/icons/ic-content.svg",
+    content: "Write compelling content"
+  },
+  {
+    icon: "/img/icons/ic-design.svg",
+    content: "Craft appealing graphic designs"
+  },
+  {
+    icon: "/img/icons/ic-photo.svg",
+    content: "Plan professional photo shoots"
+  },
+  {
+    icon: "/img/icons/ic-videos.svg",
+    content: "Create campaign videos"
+  },
+  {
+    icon: "/img/icons/ic-pages.svg",
+    content: "Manage social media pages"
+  },
+  {
+    icon: "/img/icons/ic-plans.svg",
+    content: "Write marketing plans"
+  }
+] %}
+
+<section class="section section--features bg-default overflow-visible" data-theme="primary">
+  <div class="section__inner container padding-top-xxxxl@lg padding-top-xxl">
+    <div class="section__heading max-width-sm margin-x-auto text-center margin-bottom-xxxl@lg margin-bottom-xl">
+      <h2 class="margin-bottom-xxl@lg margin-bottom-md text-capitalize margin-bottom-xl to-animate" data-animate="up">If You Don’t Know Where To<br><span>Start With Us</span></h2>
+      <p class="text-lg font-weight-bold text-capitalize to-animate" data-animate="up">We help you</p>
+    </div>
+
+    <div class="max-width-md margin-x-auto margin-bottom-xxxl@lg margin-bottom-xl">
+      <div class="grid grid-gap-lg@lg grid-gap-default display@sm">
+        {% for item in features %}
+          <div class="col-3@lg col-6">
+            <div class="feature-item rounded-lg bg-white to-animate" data-theme="default" data-animate="up">
+              <img data-src="{{ item.icon }}" alt="feature" class="margin-bottom-md">
+              <p>{{ item.content }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div id="slider-features" class="slider-wrapper padding-x-md margin-y-n-md hide@sm">
+        <div class="tns-slider padding-y-md">
+          {% for item in features %}
+            <div class="slider-item">
+              <div class="feature-item rounded-lg bg-white margin-x-md" data-theme="default">
+                <div class="margin-x-auto width-100% margin-bottom-md" style="max-width: 80px;">
+                  <div class="crop crop--fit">
+                    <img data-src="{{ item.icon }}" alt="feature" class="crop__content crop__content-contain">
+                  </div>
+                </div>
+                <p>{{ item.content }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="tns-controls">
+          <button class="btn--slider prev">
+            <img data-src="/img/icons/ic-prev.svg" alt="prev">
+          </button>
+
+          <button class="btn--slider next">
+            <img data-src="/img/icons/ic-next.svg" alt="next">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="crop crop--fit crop--16:9 crop--halfOffset rounded-lg shadow-all to-animate" data-animate="up">
+      <iframe class="crop__content" width="560" height="315" src="https://www.youtube.com/embed/r00ikilDxW4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
