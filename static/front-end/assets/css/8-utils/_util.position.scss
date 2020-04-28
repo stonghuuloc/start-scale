@@ -1,0 +1,43 @@
+// Position
+
+$positions: static, relative, absolute, fixed, sticky !default;
+
+// position value
+@each $breakpoint in map-keys($breakpoints) {
+  @include breakpoint($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    .top-0#{$infix} { top: 0 !important; }
+    .left-0#{$infix} { left: 0 !important; }
+    .right-0#{$infix} { right: 0 !important; }
+    .bottom-0#{$infix} { bottom: 0 !important; }
+
+    .position-center-x#{$infix} {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .position-center#{$infix} {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .position--center-y#{$infix} {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @each $position in $positions {
+      .position-#{$position}#{$infix} { position: $position !important; }
+    }
+  }
+}
+
+.top-n-25\% {
+  top: -25%;
+}
+
+.z-index-n-1 {
+  z-index: -1;
+}

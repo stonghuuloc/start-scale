@@ -16,6 +16,14 @@
     .height-100\%#{$infix} { height: 100% !important; }
     .height-auto#{$infix} { height: auto !important; }
 
+    .height-100vh#{$infix} {
+      height: 100vh !important;
+
+      &.section__inner {
+        min-height: 540px;
+      }
+    }
+
     .max-width-100#{$infix} { max-width: 100px !important; }
     .max-width-200#{$infix} { max-width: 200px !important; }
     .max-width-300#{$infix} { max-width: 300px !important; }

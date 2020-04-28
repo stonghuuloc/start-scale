@@ -1,0 +1,49 @@
+.plan-item {
+  padding: var(--space-lg) var(--space-xl) var(--space-xl);
+  text-align: center;
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15);
+
+  .plan__title {
+    color: var(--color-primary-lighter);
+    font-size: var(--text-lg);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .plan__price-wrapper {
+    color: var(--color-primary);
+    font-size: var(--text-lg);
+    font-weight: bold;
+
+    .plan__price {
+      font-size: var(--text-xxxl);
+    }
+
+    .divider {
+      margin-right: var(--space-unit);
+      margin-left: var(--space-sm);
+      font-size: var(--text-xs);
+      line-height: calc(1.5 * var(--text-lg));
+    }
+  }
+
+  .plan__features-list {
+    list-style: none;
+    display: inline-block;
+    text-align: left;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+
+      img {
+        margin: 0;
+        margin-top: calc(var(--text-base-size) * (var(--body-line-height) - 1));
+        margin-right: var(--space-xs);
+        // transform: translateY(-50%);
+      }
+    }
+  }
+}

@@ -1,10 +1,39 @@
+#slider-testimonials .tns-controls > * {
+  transform: translate(0, 50%);
+
+  @include breakpoint(md, 'not all') {
+    &:first-child {
+      left: var(--container-padding);
+    }
+
+    &:last-child {
+      right: var(--container-padding);
+    }
+  }
+
+  @include breakpoint(md) {
+    &:first-child {
+      transform: translate(-50%, 50%);
+    }
+
+    &:last-child {
+      transform: translate(50%, 50%);
+    }
+  }
+}
+
 .testimonials-item {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: var(--space-xl) var(--space-lg) var(--space-lg);
-  border-radius: var(--radius-lg);
-  box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.15);
+  padding: var(--space-xl) calc(var(--container-padding) + var(--space-xl)) var(--space-lg);
+  box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.1);
+
+  @include breakpoint(md) {
+    padding: var(--space-xl) var(--space-lg) var(--space-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.15);
+  }
 
   &::before {
     content: '“';
