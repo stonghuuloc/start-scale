@@ -1,9 +1,13 @@
 .plan-item {
-  padding: var(--space-lg) var(--space-xl) var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
   text-align: center;
   border-radius: var(--radius-lg);
   background: var(--color-white);
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15);
+
+  @include breakpoint(lg) {
+    padding: var(--space-lg) var(--space-xl) var(--space-xl);
+  }
 
   .plan__title {
     color: var(--color-primary-lighter);
@@ -22,10 +26,14 @@
     }
 
     .divider {
-      margin-right: var(--space-unit);
-      margin-left: var(--space-sm);
+      margin: 0 var(--space-xxs);
       font-size: var(--text-xs);
       line-height: calc(1.5 * var(--text-lg));
+
+      @include breakpoint(lg) {
+        margin-right: var(--space-unit);
+        margin-left: var(--space-sm);
+      }
     }
   }
 

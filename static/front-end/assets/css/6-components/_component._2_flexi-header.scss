@@ -24,6 +24,15 @@ Usage: codyhouse.co/license
 
 .f-header--expanded {
   // class added when navigation is visible - small devices only
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 }
 
 .f-header__mobile-content { // logo + menu button on small devices
@@ -47,18 +56,20 @@ Usage: codyhouse.co/license
   }
 }
 
-.f-header__nav-control { // menu button
-  --anim-menu-btn-size: 40px;
-  // 🍔 icon
-  --anim-menu-btn-icon-size: 28px;
-  --anim-menu-btn-icon-stroke: 2px;
-}
+// .f-header__nav-control { // menu button
+//   --anim-menu-btn-size: 40px;
+//   // 🍔 icon
+//   --anim-menu-btn-icon-size: 28px;
+//   --anim-menu-btn-icon-stroke: 2px;
+// }
 
 .f-header__nav {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
+  max-width: 200px;
+  height: 100vh;
   max-height: 100vh;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -68,9 +79,10 @@ Usage: codyhouse.co/license
   box-shadow: var(--shadow-md);
   font-size: var(--text-md); // edit font size of all nav elements
   z-index: 1;
-  visibility: hidden;
+  // visibility: hidden;
   opacity: 0;
-  transform: translateY(-1em);
+  transform: translateX(100%);
+  transition: visibility 0s, opacity 0.3s, transform 0.3s;
 
   &::before { // top header bg + border
     content: '';
@@ -84,10 +96,10 @@ Usage: codyhouse.co/license
 }
 
 .f-header__nav--is-visible {
-  visibility: visible;
+  // visibility: visible;
   opacity: 1;
-  transform: translateY(0);
-  transition: visibility 0s, opacity 0.3s, transform 0.3s;
+  transform: none;
+  // transition: visibility 0s, opacity 0.3s, transform 0.3s;
 }
 
 .f-header__nav-logo-wrapper {
@@ -96,8 +108,8 @@ Usage: codyhouse.co/license
 
 .f-header__item {
   flex-shrink: 0;
-  font-size: var(--text-lg);
-  border-bottom: 1px solid var(--color-contrast-lower);
+  font-size: var(--text-md);
+  // border-bottom: 1px solid var(--color-contrast-lower);
 }
 
 .f-header__dropdown-icon {
@@ -148,6 +160,7 @@ Usage: codyhouse.co/license
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
+    max-width: none;
     max-height: none;
     overflow: visible;
     overscroll-behavior: auto;

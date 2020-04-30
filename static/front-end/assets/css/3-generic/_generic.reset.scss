@@ -145,6 +145,10 @@ body {
   // min-height: 100%;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 // IE10+ doesn't honor `<meta name="viewport">` in some cases.
 @at-root {
   @-ms-viewport {

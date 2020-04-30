@@ -1,10 +1,14 @@
 .section__heading .divider {
   display: block;
-  width: 149px;
+  width: 75px;
   margin: 0 auto;
   border-width: 2px;
-  border-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
   border-radius: var(--radius-sm);
+
+  @include breakpoint(lg) {
+    width: 149px;
+  }
 }
 
 .section__heading span {

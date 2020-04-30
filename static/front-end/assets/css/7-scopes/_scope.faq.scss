@@ -1,0 +1,52 @@
+.collapse--faq {
+  .simple-collapse__pane {
+    padding-top: var(--space-unit);
+    border-top: 1px solid var(--color-contrast-low);
+
+    &:not(:last-child) {
+      padding-bottom: var(--space-unit);
+    }
+
+    @include breakpoint(lg) {
+      padding-top: var(--space-lg);
+
+      &:not(:last-child) {
+        padding-bottom: var(--space-lg);
+      }
+    }
+  }
+
+  .simple-collapse__trigger {
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: inline-flex;
+    width: 30px;
+    margin-right: var(--space-xs);
+
+    @include breakpoint(lg) {
+      margin-right: var(--space-lg);
+    }
+
+    > img:last-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  .simple-collapse__checkbox:checked + .simple-collapse__label .simple-collapse__trigger img:last-child {
+    opacity: 1;
+  }
+
+  .simple-collapse__body {
+    padding-left: calc(30px + var(--space-xs));
+
+    @include breakpoint(lg) {
+      padding-left: calc(30px + var(--space-lg));
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{% set faqs = [
+  {
+    question: "Is StartScale right for my business?",
+    answer: "StartScale provides basic marketing services for any growing business that wants to stay within budget. Scale up only when you need, for example, when you have a campaign. If you don’t have an in-house marketing team, start with us. Let us help you discover brand ideas and execute a solid marketing strategy."
+  },
+  {
+    question: "How long will it take StartScale to set up my brand accounts?",
+    answer: "Depending on the scope of work, we usually take between 1 to 3 days to set up accounts such as Facebook Business Manager, Instagram page, and Google Analytics. After setup, we start working on the content creation you need.<br>*Note there is a one time admin fee for setting up accounts."
+  },
+  {
+    question: "How do we communicate with our StartScale Marketing Manager?",
+    answer: "Communication is powered by Flock collaboration tool. You can live chat with us anytime from your desktop or mobile phone on the go. Flock works like WhatsApp or Viber but with the added benefit of collaboration tools."
+  },
+  {
+    question: "Do you offer a free trial?",
+    answer: "No, we don't offer a free trial because we’re confident that we’ve got your marketing needs covered with efficient and reliable service. However, we offer a 14-day satisfaction guarantee with our Unlimited Plan – see our <a href='/terms.html'>Terms of Service</a> for more details.<br><br>If you have any questions and/or would like to speak to a team member before purchasing, feel free to send us a message at support@startscale.io or live chat with us on Facebook Messenger."
+  },
+  {
+    question: "What are your core beliefs about effective marketing?",
+    answer: "Finding the trigger that unlocks brand growth requires persistence and trial & error. We design strategies around the 4Ps of marketing: place, price, product, and promotion of your business.<br><br>After we analyze your competitors, we craft your brand narrative and weave it into your digital platforms (Facebook, Instagram, email newsletter, website, Google ads)."
+  }
+] %}
+
+<section class="section">
+  <div class="section__inner container padding-y-xxxxl@lg padding-y-xl">
+    <div class="section__heading max-width-md margin-x-auto text-center margin-bottom-xxl@lg margin-bottom-md">
+      <h2 class="text-color-accent margin-bottom-xxl@lg margin-bottom-md to-animate" data-animate="up">FAQs</h2>
+      <hr class="divider margin-bottom-xxl@lg margin-bottom-md">
+      <p class="to-animate">We’re here to help. Here are our most popular FAQs. We’re always available on Live Chat Support if you have any more questions.</p>
+    </div>
+
+    <div class="simple-collapse collapse--faq margin-bottom-default@lg margin-bottom-xxl">
+      {% for item in faqs %}
+        <div class="simple-collapse__pane to-animate">
+          <input id="faq-{{ loop.index0 }}" type="radio" {{ 'checked' if loop.index0 == 0 else '' }} name="faq" class="simple-collapse__checkbox">
+          <label for="faq-{{ loop.index0 }}" class="simple-collapse__label">
+            <div class="d-flex align-items-center">
+              <div class="simple-collapse__trigger">
+                <img data-src="/img/icons/ic-plus.svg" alt="open">
+                <img data-src="/img/icons/ic-minus.svg" alt="close">
+              </div>
+
+              <span class="text-lg text-color-black font-weight-bold">{{ item.question }}</span>
+            </div>
+          </label>
+
+          <div class="simple-collapse__body">
+            <div class="margin-top-default">
+              <p>{{ item.answer | safe }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="max-width-md margin-x-auto">
+      <div class="grid grid-gap-xxxl@lg align-items-center">
+        <div class="col@lg text-left@lg text-center">
+          <h2 class="text-color-primary margin-bottom-xl@lg margin-bottom-default to-animate" data-animate="type">Put your brand<br>in safe hands</h2>
+          <p class="text-color-black text-lg font-weight-bold to-animate"><a href="tel:+123 456 789">+123 456 789</a></p>
+          <p class="text-color-black text-lg font-weight-bold to-animate"><a href="mailto:support@startscale.io">support@startscale.io</a></p>
+        </div>
+
+        <div class="col@lg">
+          <img data-src="/img/objects/contact.png" alt="contact" class="to-animate">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,88 @@
+{% set marketplace_features = [
+  {
+    icon: "/img/objects/web-dev.svg",
+    content: "Website development & management"
+  },
+  {
+    icon: "/img/objects/email-marketing.svg",
+    content: "Email marketing"
+  },
+  {
+    icon: "/img/objects/landing-page.svg",
+    content: "Landing page design"
+  },
+  {
+    icon: "/img/objects/video-edit.svg",
+    content: "Video editing"
+  },
+  {
+    icon: "/img/objects/script-writing.svg",
+    content: "Script writing"
+  },
+  {
+    icon: "/img/objects/manage.svg",
+    content: "Manage your Shopify or Wix website"
+  },
+  {
+    icon: "/img/objects/bring-in.svg",
+    content: "Bring in brand collaborators"
+  },
+  {
+    icon: "/img/objects/add-more.svg",
+    content: "Add more social media posts on top of your current plan"
+  }
+] %}
+
+<section class="section" data-bg="url('/img/objects/bg-home-6.jpg')" data-theme="primary">
+  <div class="section__inner container padding-y-xxxxl@lg padding-y-xl">
+    <img data-src="/img/objects/home-8-decor.svg" alt="decor" class="position-absolute left-0 bottom-0 display@lg">
+
+    <div class="section__heading max-width-sm margin-x-auto text-center margin-bottom-xxl">
+      <h2 class="text-color-accent margin-bottom-xxl@lg margin-bottom-md to-animate" data-animate="up">Private Marketplace</h2>
+      <hr class="divider margin-bottom-xxl@lg margin-bottom-md">
+      <p class="to-animate">StartScale customers can access our powerful, affordable marketplace from their dashboard to update and upgrade marketing services.<br><br>Enjoy the flexibility to add these custom marketing services when planning a big campaign.</p>
+    </div>
+
+    <div class="grid grid-gap-lg@lg grid-gap-default margin-bottom-xl display@sm">
+      {% for item in marketplace_features %}
+        <div class="col-3@lg col-6">
+          <div class="feature-item rounded-lg bg-white to-animate" data-theme="default" data-animate="up">
+            <img data-src="{{ item.icon }}" alt="feature" class="margin-bottom-md">
+            <p>{{ item.content }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="slider-wrapper slider--features padding-x-md padding-bottom-md margin-y-n-md hide@sm to-animate">
+      <div class="tns-slider padding-y-md">
+        {% for item in marketplace_features %}
+          <div class="slider-item">
+            <div class="feature-item rounded-lg bg-white margin-x-md" data-theme="default">
+              <div class="margin-x-auto width-100% margin-bottom-md" style="max-width: 80px;">
+                <div class="crop crop--fit">
+                  <img data-src="{{ item.icon }}" alt="feature" class="crop__content crop__content-contain">
+                </div>
+              </div>
+              <p>{{ item.content }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="tns-controls">
+        <button class="btn--slider prev">
+          <img data-src="/img/icons/ic-prev.svg" alt="prev">
+        </button>
+
+        <button class="btn--slider next">
+          <img data-src="/img/icons/ic-next.svg" alt="next">
+        </button>
+      </div>
+    </div>
+
+    <div class="max-width-sm margin-x-auto text-center">
+      <p class="to-animate">Scale your brand with speed any time you need, from mobile, tablet or desktop. Our technology makes brand management easy.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+.simple-collapse {
+  &__checkbox {
+    display: none;
+    visibility: hidden;
+
+    &:checked ~ .simple-collapse__body {
+      max-height: 300px;
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    display: block;
+  }
+
+  &__title {
+    cursor: pointer;
+  }
+
+  &__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+}

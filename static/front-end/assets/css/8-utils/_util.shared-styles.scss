@@ -43,6 +43,8 @@ $positions: static, relative, absolute, fixed, sticky !default;
   opacity: 0;
 }
 
+[data-animate="type"] .line { opacity: 0; }
+
 [data-animate="image"] {
   position: relative;
   overflow: hidden;
@@ -117,14 +119,6 @@ $positions: static, relative, absolute, fixed, sticky !default;
 .order-top {
   position: relative;
   z-index: 2 !important;
-}
-
-hr {
-  border: 0.5px solid var(--color-contrast-lower);
-
-  [data-theme="accent"] & {
-    border-color: var(--color-contrast-low);
-  }
 }
 
 .absolute-center {

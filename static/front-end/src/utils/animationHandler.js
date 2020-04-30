@@ -41,7 +41,9 @@ export default function () {
             let animTarget = el.getElementsByClassName('line');
             for (let lineIndex = 0; lineIndex < animTarget.length; lineIndex++) {
               const target = animTarget[lineIndex];
-              Util.addClass(target, `animated fadeInUp delay-${lineIndex % 4}`);
+              setTimeout(() => {
+                Util.addClass(target, "animated fadeInUp");
+              }, lineIndex * 400);
             }
             break;
           default:
