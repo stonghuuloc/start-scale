@@ -1,5 +1,9 @@
 .section--contact {
   form {
-    box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.15);
+    box-shadow: unset;
+
+    @include breakpoint(xxl) {
+      box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.15);
+    }
   }
 }

@@ -2,16 +2,31 @@
   margin-bottom: var(--space-sm);
 
   input,
+  textarea,
+  select {
+    padding: var(--space-sm) var(--space-unit);
+    height: 48px;
+    border: 1px solid #e7e0d9;
+    border-radius: calc(var(--radius) * 1.3);
+    background-color: rgba(#e7e0d9, 0.4);
+  }
+
+  input,
   textarea {
     width: 100%;
-    padding: var(--space-sm) var(--space-unit);
-    // height: 48px;
-    border: 1px solid #e7e0d9;
-    border-radius: var(--radius-md);
-    background-color: rgba(#e7e0d9, 0.4);
   }
 
   label {
     color: var(--color-accent);
+  }
+
+  .style-inline {
+    border-radius: 13px;
+    border: 1px solid #e7e0d9;
+
+    input,
+    select {
+      border: unset;
+    }
   }
 }
