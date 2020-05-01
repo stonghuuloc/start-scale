@@ -57,7 +57,7 @@ import "assets/css/main.scss";
     Util.addClass(document.documentElement, 'fonts-loaded');
   })
 
-  if (!window.location.pathname) {
+  if (!window.location.pathname.split(1)) {
     Util.addClass($('.js-f-header')[0], 'hide-nav--fixed');
   }
 

@@ -25,6 +25,14 @@
   background-repeat: no-repeat;
 }
 
+.section--fullScreen {
+  height: calc(100vh - var(--f-header-height));
+
+  .hide-nav--fixed & {
+    height: 100vh;
+  }
+}
+
 .section__inner {
   position: relative;
   // overflow: hidden;
