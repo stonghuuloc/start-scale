@@ -29,7 +29,14 @@ class CustomSelect {
 
     let select_placeholder = document.createElement('div');
     Util.addClass(select_placeholder, 'select__placeholder');
-    select_placeholder.innerHTML = this.options[0].innerHTML;
+    if (this.options[0].dataset.thumbnail) {
+      let option_thumbnail = document.createElement('img');
+      option_thumbnail.setAttribute('src', this.options[0].dataset.thumbnail);
+      option_thumbnail.setAttribute('alt', this.options[0].value);
+      Util.addClass(option_thumbnail, 'margin-right-xxs');
+      select_placeholder.appendChild(option_thumbnail)
+    }
+    select_placeholder.appendChild(document.createTextNode(this.options[0].innerHTML));
     this.element.insertBefore(select_placeholder, this.element.firstElementChild);
     this.selectPlaceholder = this.element.querySelector('.select__placeholder');
 
@@ -38,7 +45,14 @@ class CustomSelect {
       
       let select_option = document.createElement('div');
       Util.addClass(select_option, 'select__option');
-      select_option.innerHTML = option.innerHTML;
+      if (option.dataset.thumbnail) {
+        let option_thumbnail = document.createElement('img');
+        option_thumbnail.setAttribute('src', option.dataset.thumbnail);
+        option_thumbnail.setAttribute('alt', option.value);
+        Util.addClass(option_thumbnail, 'margin-right-xxs');
+        select_option.appendChild(option_thumbnail)
+      }
+      select_option.appendChild(document.createTextNode(option.innerHTML));
       this.selectDropdown.appendChild(select_option);
     }
     this.selectOptions = this.element.querySelectorAll('.select__option');
