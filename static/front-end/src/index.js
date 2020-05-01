@@ -57,7 +57,10 @@ import "assets/css/main.scss";
     Util.addClass(document.documentElement, 'fonts-loaded');
   })
 
-  dom.watch();
+  if (!window.location.pathname) {
+    Util.addClass($('.js-f-header')[0], 'hide-nav--fixed');
+  }
+
   const scroll = new SmoothScroll('a[href*="#"]', { speed: 200 });
 
   const $ = document.querySelectorAll.bind(document);
@@ -77,4 +80,5 @@ import "assets/css/main.scss";
 
   // init LazyLoadInstance at last
   const lazyLoadInstance = new LazyLoad({elements_selector: "[data-src], [data-bg], [data-srcset]"});
+  dom.watch();
 }())
