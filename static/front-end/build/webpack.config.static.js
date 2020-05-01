@@ -18,7 +18,7 @@ module.exports = merge(baseConfig, {
     pathinfo: false,
     filename: 'js/[name].js',
     // publicPath: `${themePath}/public/`
-    publicPath: 'public/'
+    publicPath: './'
   },
 
   plugins: [
