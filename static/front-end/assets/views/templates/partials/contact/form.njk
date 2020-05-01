@@ -7,9 +7,9 @@
           <img class="padding-x-xxl padding-x-0@lg display-block" src="/img/objects/plane.png" alt="contact form">
         </div>
         <div class="col-6@lg">
-          <form class="padding-xl@lg padding-x-container margin-0@lg margin-x-n-container rounded-xl@lg" action="/blog" method="get">
+          <form class="padding-xl@lg padding-x-container margin-0@lg margin-x-n-container rounded-xl@lg bg-white" action="/blog" method="get">
             <fieldset>
-              <legend class="font-weight-bold text-color-primary margin-bottom-lg text-center text-left@lg">Happy to assist you</legend>
+              <legend class="text-lg font-weight-bold text-color-primary margin-bottom-lg text-center text-left@lg">Happy to assist you</legend>
               <div class="form-item">
                 <label for="full_name">Full Name</label>
                 <input type="text" id="full_name" name="full_name">
@@ -25,10 +25,15 @@
               <div class="form-item">
                 <label for="phone_number">Phone Number</label>
                 <div class="d-flex style-inline">
-                  <select name="phone_code">
-                    <option value="+65" data-flat="">+65</option>
-                    <option value="+84" data-flat="">+84</option>
-                  </select>
+                  <div class="custom-select">
+                    <select name="phone_code">
+                      {# FOR PLACEHOLDER ONLY #}
+                      <option value="" data-thumbnail="/img/objects/flag-sp.png" disabled>+64</option>
+                      {# /FOR PLACEHOLDER ONLY #}
+                      <option value="+65" data-thumbnail="/img/objects/flag-sp.png" data-flat="">+65</option>
+                      <option value="+84" data-thumbnail="/img/objects/flag-sp.png" data-flat="">+84</option>
+                    </select>
+                  </div>
                   <input type="text" id="phone_number" name="phone_number">
                 </div>
               </div>
@@ -38,12 +43,16 @@
               </div>
               <div class="form-item">
                 <label for="subject">How can we help you?</label>
-                <select type="text" id="subject" name="subject">
-                  <option value="Select...">Select...</option>
-                  <option value="I like to understand how Startscale will work with us." data-flat="">I like to understand how Startscale will work with us.</option>
-                  <option value="I like to know which plan is suitable for my company." data-flat="">I like to know which plan is suitable for my company.</option>
-                  <option value="I have a question about being a Marketer at Startscale. " data-flat="">I have a question about being a Marketer at Startscale. </option>
-                </select>
+                <div class="custom-select">
+                  <select type="text" id="subject" name="subject">
+                    {# FOR PLACEHOLDER ONLY #}
+                    <option value="Select..." disabled>Select...</option>
+                    {# /FOR PLACEHOLDER ONLY #}
+                    <option value="I like to understand how Startscale will work with us." data-flat="">I like to understand how Startscale will work with us.</option>
+                    <option value="I like to know which plan is suitable for my company." data-flat="">I like to know which plan is suitable for my company.</option>
+                    <option value="I have a question about being a Marketer at Startscale. " data-flat="">I have a question about being a Marketer at Startscale. </option>
+                  </select>
+                </div>
               </div>
               <div class="form-item text-center margin-top-lg">
                 <bottom class="btn btn--primary">Send <svg class="svg-inline--fa fa-chevron-right fa-w-10 margin-left-sm" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg><!-- <i class="fas fa-chevron-right margin-left-sm"></i> --></bottom>

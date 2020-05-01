@@ -2,7 +2,7 @@
   form {
     box-shadow: unset;
 
-    @include breakpoint(xxl) {
+    @include breakpoint(lg) {
       box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.15);
     }
   }

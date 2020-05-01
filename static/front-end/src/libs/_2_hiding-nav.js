@@ -85,10 +85,10 @@
         setTranslate(subNav[0], '0%');
       }
       // if primary nav is fixed -> toggle bg class
-      if(navIsFixed) {
+      // if(navIsFixed) {
         var scrollTop = window.scrollY || window.pageYOffset;
         Util.toggleClass(mainNav[0], 'hide-nav--has-bg', (scrollTop > headerHeight + mainNavTop));
-      }
+      // }
       previousTop = currentTop;
       scrolling = false;
     };

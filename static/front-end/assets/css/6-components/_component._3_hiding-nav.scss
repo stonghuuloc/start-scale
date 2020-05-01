@@ -21,8 +21,10 @@ Usage: codyhouse.co/license
   background-color: transparent;
 }
 
+.hide-nav:not(.hide-nav--fixed),
 .hide-nav--has-bg {
   background-color: var(--color-bg);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
 }
 
 .hide-nav--off-canvas { // main header is off-canvas

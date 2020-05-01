@@ -2,8 +2,8 @@ import LazyLoad from "vanilla-lazyload";
 import FontFaceObserver from "fontfaceobserver";
 // import Scrollbar from "smooth-scrollbar";
 import SmoothScroll from "smooth-scroll";
-import ScrollMagic from "scrollmagic";
-import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
+// import ScrollMagic from "scrollmagic";
+// import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 // -------------------------
 // FONT AWESOME
 // -------------------------
@@ -36,9 +36,9 @@ library.add(
 // -------------------------
 import "./libs/_1_anim-menu-btn";
 import "./libs/_1_modal-window";
-import "./libs/_2_flexi-header";
-import "./libs/_2_hiding-nav";
 import "./libs/_1_tabs";
+import "./libs/_2_flexi-header";
+// import "./libs/_2_hiding-nav";
 // -------------------------
 import initAnimation from "./utils/animationHandler";
 import initFeaturesliders from './components/features-slider';
@@ -49,6 +49,8 @@ import "assets/css/main.scss";
 
 (function () {
   Util.addClass(document.documentElement, 'js');
+  const $ = document.querySelectorAll.bind(document);
+  const scroll = new SmoothScroll('a[href*="#"]', { speed: 200 });
 
   const font_primary = new FontFaceObserver('Source Sans Pro');
   const font_heading = new FontFaceObserver('Cabin');
@@ -57,13 +59,15 @@ import "assets/css/main.scss";
     Util.addClass(document.documentElement, 'fonts-loaded');
   })
 
-  if (!window.location.pathname.split(1)) {
-    Util.addClass($('.js-f-header')[0], 'hide-nav--fixed');
+  if (!window.location.pathname.slice(1)) {
+    Util.addClass(document.querySelector('.js-f-header'), 'hide-nav--fixed');
+  }
+  import("./libs/_2_hiding-nav");
+
+  if ($('.custom-select').length) {
+    import('./libs/custom-select').then(module => module.default());
   }
 
-  const scroll = new SmoothScroll('a[href*="#"]', { speed: 200 });
-
-  const $ = document.querySelectorAll.bind(document);
 
   // init custom libs
   initAnimation();
@@ -72,11 +76,11 @@ import "assets/css/main.scss";
   initTestimonialsliders();
 
   // Hero scroll parallax
-  const controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: 'onEnter', duration: '200%'}});
+  // const controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: 'onEnter', duration: '200%'}});
 
-  new ScrollMagic.Scene({triggerElement: '.hero--full-screen'})
-    .setTween('.hero__background', {y: '30%', ease: Linear.easeNone})
-    .addTo(controller)
+  // new ScrollMagic.Scene({triggerElement: '.hero--full-screen'})
+  //   .setTween('.hero__background', {y: '30%', ease: Linear.easeNone})
+  //   .addTo(controller)
 
   // init LazyLoadInstance at last
   const lazyLoadInstance = new LazyLoad({elements_selector: "[data-src], [data-bg], [data-srcset]"});
