@@ -158,6 +158,16 @@ $spacers: (
     .padding-x-container#{$infix} {
       padding-right: var(--container-padding);
     }
+
+    .padding-top-container#{$infix},
+    .padding-y-container#{$infix} {
+      padding-top: var(--container-padding);
+    }
+
+    .padding-bottom-container#{$infix},
+    .padding-y-container#{$infix} {
+      padding-bottom: var(--container-padding);
+    }
   }
 }
 
