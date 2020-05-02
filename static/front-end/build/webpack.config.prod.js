@@ -17,10 +17,12 @@ module.exports = merge(baseConfig, {
   mode: 'production',
 
   output: {
-    path: utils.resolve(`../../site/web${themePath}/public`),
+    // path: utils.resolve(`../../site/web${themePath}/public`),
+    path: utils.resolve('../web/public'),
     pathinfo: true,
     filename: 'js/[name].js',
-    publicPath: `${themePath}/public/`
+    // publicPath: `${themePath}/public/`
+    path: utils.resolve('/static/web/public'),
   },
 
   optimization: {
@@ -62,7 +64,8 @@ module.exports = merge(baseConfig, {
   plugins: [
     new CopyWebpackPlugin([{
       from: utils.resolve('assets/static/img'),
-      to: utils.resolve(`../../site/web${themePath}/public/img`),
+      // to: utils.resolve(`../../site/web${themePath}/public/img`),
+      to: utils.resolve('../web/public/img'),
       toType: 'dir'
     }]),
     new BundleAnalyzerPlugin()

@@ -22,4 +22,10 @@
     border-radius: 50%;
     padding: 10px;
   }
+
+  @include breakpoint(lg, 'not all') {
+    .section--fullScreen {
+      min-height: unset;
+    }
+  }
 }

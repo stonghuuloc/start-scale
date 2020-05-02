@@ -60,7 +60,7 @@ import "assets/css/main.scss";
   })
 
   if (!window.location.pathname.slice(1)) {
-    Util.addClass(document.querySelector('.js-f-header'), 'hide-nav--fixed');
+    Util.addClass(document.querySelector('.js-f-header'), 'f-header--transparent');
   }
   import("./libs/_2_hiding-nav");
 
@@ -75,12 +75,18 @@ import "assets/css/main.scss";
   initSupportliders();
   initTestimonialsliders();
 
-  // Hero scroll parallax
-  // const controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: 'onEnter', duration: '200%'}});
+  const inputFiles = $('input[type="file"]');
+  if (inputFiles.length) {
+    for (let index = 0; index < inputFiles.length; index++) {
+      const element = inputFiles[index];
+      const label = element.previousElementSibling;
 
-  // new ScrollMagic.Scene({triggerElement: '.hero--full-screen'})
-  //   .setTween('.hero__background', {y: '30%', ease: Linear.easeNone})
-  //   .addTo(controller)
+      element.addEventListener('change', function () {
+        let fileName = element.files[0].name;
+        label.childNodes[1].textContent = fileName;
+      })
+    }
+  }
 
   // init LazyLoadInstance at last
   const lazyLoadInstance = new LazyLoad({elements_selector: "[data-src], [data-bg], [data-srcset]"});

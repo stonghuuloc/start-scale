@@ -45,6 +45,8 @@
   white-space: nowrap !important;
 }
 
+.cursor-pointer { cursor: pointer !important; }
+
 $textSizers: (
   xs: var(--text-xs),
   sm: var(--text-sm),

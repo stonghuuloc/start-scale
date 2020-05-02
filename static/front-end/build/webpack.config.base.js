@@ -1,15 +1,10 @@
 'use strict'
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-// const NunjucksWebpackPlugin = require('nunjucks-webpack-plugin')
-// const CopyWebpackPlugin = require('copy-webpack-plugin')
-// const MagicImporter = require('node-sass-magic-importer')
 const glob = require('glob-all');
 const globImporter = require('node-sass-glob-importer')
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const MergeIntoSingleFilePlugin = require('webpack-merge-and-include-globally')
-// const { VueLoaderPlugin } = require('vue-loader')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const utils = require('./utils')
@@ -190,10 +185,6 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     ...pages,
-    // new VueLoaderPlugin(),
-    // new MiniCssExtractPlugin({
-    //   filename: 'css/[name].css',
-    // }),
     new MergeIntoSingleFilePlugin({ // 👈  merge util.js and components .js files
       files: [
         {

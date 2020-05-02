@@ -68,7 +68,7 @@ Usage: codyhouse.co/license
   top: 0;
   right: 0;
   width: 100%;
-  max-width: 200px;
+  max-width: 220px;
   height: 100vh;
   max-height: 100vh;
   overflow: auto;
@@ -91,7 +91,7 @@ Usage: codyhouse.co/license
     top: 0;
     height: var(--f-header-height);
     background-color: inherit;
-    border-bottom: 1px solid var(--color-contrast-lower);
+    // border-bottom: 1px solid var(--color-contrast-lower);
   }
 }
 

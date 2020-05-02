@@ -65,6 +65,19 @@ class CustomSelect {
     const self = this;
     this.element.addEventListener('click', function () {
       self.isVisible = !self.isVisible;
+
+      if (self.isVisible) {
+        let bounds_bottom = self.element.getBoundingClientRect().bottom;
+
+        if (window.innerHeight - bounds_bottom < 250) {
+          Util.addClass(self.element, 'reverse');
+        }
+      } else {
+        setTimeout(() => {
+          Util.removeClass(self.element, 'reverse');
+        }, 300);
+      }
+
       Util.toggleClass(self.element, self.showClass, self.isVisible);
     })
 

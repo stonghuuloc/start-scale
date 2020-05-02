@@ -21,7 +21,7 @@ Usage: codyhouse.co/license
   background-color: transparent;
 }
 
-.hide-nav:not(.hide-nav--fixed),
+.hide-nav:not(.f-header--transparent),
 .hide-nav--has-bg {
   background-color: var(--color-bg);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);

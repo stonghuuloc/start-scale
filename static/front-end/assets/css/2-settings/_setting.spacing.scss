@@ -58,7 +58,7 @@
     }
 
     @include breakpoint(xxl) {
-      --container-padding: 99px;
+      --container-padding: calc((100vw - var(--max-width-xl)) / 2);
     }
   }
 }
