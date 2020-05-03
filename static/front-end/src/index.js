@@ -11,6 +11,7 @@ import { library, dom } from "@fortawesome/fontawesome-svg-core";
 
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons/faChevronLeft";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons/faChevronRight";
+import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons/faFacebookF';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons/faLinkedinIn';
@@ -23,6 +24,7 @@ import { faCcStripe } from '@fortawesome/free-brands-svg-icons/faCcStripe';
 library.add(
   faChevronLeft,
   faChevronRight,
+  faTimes,
   faFacebookF,
   faInstagram,
   faLinkedinIn,
@@ -36,7 +38,8 @@ library.add(
 // -------------------------
 import "./libs/_1_anim-menu-btn";
 import "./libs/_1_modal-window";
-import "./libs/_1_tabs";
+// import "./libs/_1_tabs";
+import "./libs/_1_read-more";
 import "./libs/_2_flexi-header";
 // import "./libs/_2_hiding-nav";
 // -------------------------
@@ -66,6 +69,10 @@ import "assets/css/main.scss";
 
   if ($('.custom-select').length) {
     import('./libs/custom-select').then(module => module.default());
+  }
+
+  if ($('.portfolio-list').length) {
+    import('./components/portfolio').then(module => module.default());
   }
 
 

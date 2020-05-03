@@ -3,3 +3,5 @@
 .bg-accent { background-color: var(--color-accent) !important; }
 .bg-black { background-color: var(--color-black) !important; }
 .bg-white { background-color: var(--color-white) !important; }
+.bg-opacity-90\% { --bg-o: 0.9; }
+.bg-contrast-higher { background-color: alpha(var(--color-contrast-higher), var(--bg-o, 0.1)); }

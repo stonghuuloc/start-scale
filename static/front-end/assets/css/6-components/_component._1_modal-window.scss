@@ -7,12 +7,6 @@ Usage: codyhouse.co/license
 
 -------------------------------- */
 
-:root {
-  // close button
-  --modal-close-btn-size: 1.25em;
-  --modal-close-btn-padding: var(--space-sm);
-}
-
 .modal {
   position: fixed;
   z-index: var(--zindex-overlay);
@@ -20,131 +14,210 @@ Usage: codyhouse.co/license
   height: 100%;
   left: 0;
   top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: alpha(var(--color-contrast-higher), 0.9);
-  // hide element
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
+
+  &:not(.modal--is-visible) {
+    pointer-events: none;
+    background-color: transparent;
+  }
 }
 
 .modal--is-visible {
   opacity: 1;
   visibility: visible;
-  pointer-events: auto;
 }
 
 .modal__content {
-  border-radius: var(--radius-md);
   overflow: auto;
-  width: calc(100% - 2 * var(--component-padding));
-  max-height: calc(100vh - 4 * (var(--modal-close-btn-size) + var(--modal-close-btn-padding)));
-  background-color: var(--color-bg);
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
 }
 
-.modal__header {
-  padding: var(--space-sm) var(--component-padding);
-  background-color: var(--color-contrast-lower);
-  // align title and icon (if icon is placed inside header)
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.modal__body {
-  height: 100%;
-  padding: var(--space-sm) var(--component-padding);
-}
-
-.modal__footer {
-  padding: var(--component-padding);
-}
-
+// close button
 .modal__close-btn {
+  display: flex;
+  flex-shrink: 0;
+  border-radius: 50%;
+  transition: 0.2s;
+
+  .icon {
+    display: block;
+    margin: auto;
+  }
+}
+
+.modal__close-btn--outer { // close button - outside the modal__content
+  width: 3.2em;
+  height: 3.2em;
   position: fixed;
   top: var(--space-sm);
   right: var(--space-sm);
   z-index: var(--zindex-fixed-element);
-  padding: var(--modal-close-btn-padding);
-  border-radius: 50%;
   background-color: alpha(var(--color-contrast-higher), 0.8);
-  transition: 0.2s;
 
   &:hover {
     background-color: var(--color-contrast-higher);
   }
 
   .icon {
-    display: block;
-    color: var(--color-bg);
-    width: var(--modal-close-btn-size);
-    height: var(--modal-close-btn-size);
+    color: var(--color-bg); // icon color
   }
 }
 
-// if close btn is inside content (e.g, inside header)
-.modal__content .modal__close-btn { // alt close btn style (if inside modal content)
-  --modal-close-btn-size: 1em;
-  --modal-close-btn-padding: 0.5em;
-
-  position: static;
-  flex-shrink: 0;
+.modal__close-btn--inner { // close button - inside the modal__content
+  width: 2em;
+  height: 2em;
   background-color: var(--color-bg);
   box-shadow: var(--shadow-sm);
-  transition: 0.2s;
 
   .icon {
-    color: inherit;
+    color: inherit; // icon color
   }
 
   &:hover {
     box-shadow: var(--shadow-md);
+  }
+}
 
-    .icon {
-      color: var(--color-contrast-higher);
+// animations
+:root {
+  --modal-transition-duration: 0.2s;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .modal--animate-fade {
+    --modal-transition-duration: 0.2s;
+
+    transition: opacity var(--modal-transition-duration), background-color var(--modal-transition-duration), visibility 0s var(--modal-transition-duration);
+
+    &.modal--is-visible {
+      transition: opacity var(--modal-transition-duration), background-color var(--modal-transition-duration), visibility 0s;
+    }
+  }
+
+  .modal--animate-scale,
+  .modal--animate-translate-up,
+  .modal--animate-translate-down,
+  .modal--animate-translate-right,
+  .modal--animate-translate-left {
+    --modal-transition-duration: 0.2s;
+
+    transition: opacity var(--modal-transition-duration), visibility 0s var(--modal-transition-duration);
+
+    .modal__content {
+      will-change: transform;
+      transition: transform var(--modal-transition-duration) var(--ease-out);
+    }
+
+    &.modal--is-visible {
+      transition: opacity var(--modal-transition-duration), visibility 0s;
+
+      .modal__content {
+        transform: scale(1); // reset all transformations
+      }
+    }
+  }
+
+  .modal--animate-slide-up,
+  .modal--animate-slide-down,
+  .modal--animate-slide-right,
+  .modal--animate-slide-left {
+    --modal-transition-duration: 0.3s;
+
+    transition: opacity 0s var(--modal-transition-duration), background-color var(--modal-transition-duration), visibility 0s var(--modal-transition-duration);
+
+    .modal__content {
+      will-change: transform;
+      transition: transform var(--modal-transition-duration) var(--ease-out);
+    }
+
+    &.modal--is-visible {
+      transition: background-color var(--modal-transition-duration), visibility 0s;
+
+      .modal__content {
+        transform: scale(1); // reset all transformations
+      }
+    }
+  }
+
+  // scale
+  .modal--animate-scale {
+    .modal__content {
+      transform: scale(0.95);
+    }
+  }
+
+  // translate
+  .modal--animate-translate-up {
+    .modal__content {
+      transform: translateY(40px);
+    }
+  }
+
+  .modal--animate-translate-down {
+    .modal__content {
+      transform: translateY(-40px);
+    }
+  }
+
+  .modal--animate-translate-right {
+    .modal__content {
+      transform: translateX(-40px);
+    }
+  }
+
+  .modal--animate-translate-left {
+    .modal__content {
+      transform: translateX(40px);
+    }
+  }
+
+  // slide
+  .modal--animate-slide-up {
+    .modal__content {
+      transform: translateY(100%);
+    }
+  }
+
+  .modal--animate-slide-down {
+    .modal__content {
+      transform: translateY(-100%);
+    }
+  }
+
+  .modal--animate-slide-right {
+    .modal__content {
+      transform: translateX(-100%);
+    }
+  }
+
+  .modal--animate-slide-left {
+    .modal__content {
+      transform: translateX(100%);
     }
   }
 }
 
-// close btn sticky within content
-.modal__content .modal__close-btn--sticky {
-  position: sticky;
-  float: right;
-  top: 0;
-  right: 0;
-}
-
-// --header-is-fixed
-.modal--header-is-fixed {
-  .modal__header {
-    position: sticky;
-    top: 0;
-  }
-}
-
-// --footer-is-fixed
-.modal--footer-is-fixed {
-  .modal__footer {
-    position: sticky;
-    bottom: 0;
-    background: var(--color-bg);
-    box-shadow: var(--shadow-sm);
-  }
-}
-
-// if animation = enabled
-.modal[data-animation="on"] {
-  transition: opacity 0.3s, visibility 0.3s;
-
+// load content - optional
+.modal--is-loading {
   .modal__content {
-    // will-change: transform;
-    transition: transform 0.3s var(--ease-out);
-    transform: translateY(10%);
+    visibility: hidden;
   }
 
-  &.modal--is-visible .modal__content {
-    transform: translateY(0);
+  .modal__loader {
+    display: flex;
   }
+}
+
+.modal__loader { // loader icon
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  pointer-events: none;
 }
