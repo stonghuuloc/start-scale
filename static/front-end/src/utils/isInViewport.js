@@ -9,7 +9,7 @@ window.addEventListener('resize', debounce(() => {
 export default function isInViewport(el) {
   let offset = isMobile ? 100 : 200;
   const scroll = window.scrollY + offset || window.pageYOffset + offset;
-  const boundsTop = el.getBoundingClientRect().top;
+  const boundsTop = el.getBoundingClientRect().top + window.scrollY;
 
   const viewport = {
     top: scroll,
@@ -17,7 +17,7 @@ export default function isInViewport(el) {
   };
 
   const bounds = {
-    top: boundsTop + el.clientHeight / 4,
+    top: boundsTop + el.clientHeight / 3,
     bottom: boundsTop + el.clientHeight
   };
 
