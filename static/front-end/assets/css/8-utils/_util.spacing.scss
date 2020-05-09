@@ -10,10 +10,9 @@ $spacers: (
   xxl:      var(--space-xxl),
   xxxl:     var(--space-xxxl),
   xxxxl:    var(--space-xxxxl),
-  default:  var(--space-unit),
-  0:        0
+  xxxxxl:   var(--space-xxxxxl),
+  default:  var(--space-unit)
 );
-
 // Adding default Margin and Padding classes
 @each $breakpoint in map-keys($breakpoints) {
   $infix: breakpoint-infix($breakpoint, $breakpoints);
@@ -24,153 +23,112 @@ $spacers: (
   }
 
   @include breakpoint($breakpoint) {
-    .has-no-margin#{$infix} { margin: 0 !important; }
-    .has-no-padding#{$infix} { padding: 0 !important; }
-
     @each $prop, $abbrev in (margin: margin, padding: padding) {
       @each $size, $length in $spacers {
         .#{$abbrev}-#{$size}#{$infix} { #{$prop}: $length !important; }
 
-        .#{$abbrev}-top-#{$size}#{$infix},
-        .#{$abbrev}-y-#{$size}#{$infix} {
+        .#{$abbrev}-y-#{$size}#{$infix},
+        .#{$abbrev}-top-#{$size}#{$infix} {
           #{$prop}-top: $length !important;
         }
 
-        .#{$abbrev}-right-#{$size}#{$infix},
-        .#{$abbrev}-x-#{$size}#{$infix} {
+        .#{$abbrev}-x-#{$size}#{$infix},
+        .#{$abbrev}-right-#{$size}#{$infix} {
           #{$prop}-right: $length !important;
         }
 
-        .#{$abbrev}-bottom-#{$size}#{$infix},
-        .#{$abbrev}-y-#{$size}#{$infix} {
+        .#{$abbrev}-y-#{$size}#{$infix},
+        .#{$abbrev}-bottom-#{$size}#{$infix} {
           #{$prop}-bottom: $length !important;
         }
 
-        .#{$abbrev}-left-#{$size}#{$infix},
-        .#{$abbrev}-x-#{$size}#{$infix} {
+        .#{$abbrev}-x-#{$size}#{$infix},
+        .#{$abbrev}-left-#{$size}#{$infix} {
           #{$prop}-left: $length !important;
         }
       }
+      .#{$abbrev}-0#{$infix} { #{$prop}: 0 !important; }
+
+      .#{$abbrev}-y-0#{$infix},
+      .#{$abbrev}-top-0#{$infix} {
+        #{$prop}-top: 0 !important;
+      }
+
+      .#{$abbrev}-x-0#{$infix},
+      .#{$abbrev}-right-0#{$infix} {
+        #{$prop}-right: 0 !important;
+      }
+
+      .#{$abbrev}-y-0#{$infix},
+      .#{$abbrev}-bottom-0#{$infix} {
+        #{$prop}-bottom: 0 !important;
+      }
+
+      .#{$abbrev}-x-0#{$infix},
+      .#{$abbrev}-left-0#{$infix} {
+        #{$prop}-left: 0 !important;
+      }
     }
 
-    .margin-top-auto#{$infix},
-    .margin-y-auto#{$infix} {
+    .margin-y-auto#{$infix},
+    .margin-top-auto#{$infix} {
       margin-top: auto !important;
     }
 
-    .margin-right-auto#{$infix},
-    .margin-x-auto#{$infix} {
+    .margin-x-auto#{$infix},
+    .margin-right-auto#{$infix} {
       margin-right: auto !important;
     }
 
-    .margin-bottom-auto#{$infix},
-    .margin-y-auto#{$infix} {
+    .margin-y-auto#{$infix},
+    .margin-bottom-auto#{$infix} {
       margin-bottom: auto !important;
     }
 
-    .margin-left-auto#{$infix},
-    .margin-x-auto#{$infix} {
+    .margin-x-auto#{$infix},
+    .margin-left-auto#{$infix} {
       margin-left: auto !important;
     }
-
     // Negative margins (e.g., where `.margin-bottom-n-xl` is negative version of `.margin-bottom-xl`)
     @each $size, $length in $spacers {
       @if ($size) {
         .margin-n-#{$size}#{$infix} { margin: calc(-1 * #{$length}) !important; }
 
-        .margin-top-n-#{$size}#{$infix},
-        .margin-y-n-#{$size}#{$infix} {
+        .margin-y-n-#{$size}#{$infix},
+        .margin-top-n-#{$size}#{$infix} {
           margin-top: calc(-1 * #{$length}) !important;
         }
 
-        .margin-right-n-#{$size}#{$infix},
-        .margin-x-n-#{$size}#{$infix} {
+        .margin-x-n-#{$size}#{$infix},
+        .margin-right-n-#{$size}#{$infix} {
           margin-right: calc(-1 * #{$length}) !important;
         }
 
-        .margin-bottom-n-#{$size}#{$infix},
-        .margin-y-n-#{$size}#{$infix} {
+        .margin-y-n-#{$size}#{$infix},
+        .margin-bottom-n-#{$size}#{$infix} {
           margin-bottom: calc(-1 * #{$length}) !important;
         }
 
-        .margin-left-n-#{$size}#{$infix},
-        .margin-x-n-#{$size}#{$infix} {
+        .margin-x-n-#{$size}#{$infix},
+        .margin-left-n-#{$size}#{$infix} {
           margin-left: calc(-1 * #{$length}) !important;
         }
       }
     }
+
+    .margin-x-n-container#{$infix},
+    .margin-left-n-container#{$infix} { margin-left: calc(-1 * var(--container-padding)); }
+
+    .margin-x-n-container#{$infix},
+    .margin-right-n-container#{$infix} { margin-right: calc(-1 * var(--container-padding)); }
+
+    .padding-x-container#{$infix},
+    .padding-left-container#{$infix} { padding-left: var(--container-padding); }
+
+    .padding-x-container#{$infix},
+    .padding-right-container#{$infix} { padding-right: var(--container-padding); }
   }
 }
-
-// --------------------------------
-
-// Padding
-
-// --------------------------------
-
-// Adding default padding clasess
-@each $breakpoint in map-keys($breakpoints) {
-  $infix: breakpoint-infix($breakpoint, $breakpoints);
-
-  @include breakpoint($breakpoint, "not all") {
-    .has-padding#{$infix} { padding: 0 !important; }
-  }
-
-  @include breakpoint($breakpoint) {
-    .has-no-padding#{$infix} { padding: 0 !important; }
-
-    @each $size, $length in $spacers {
-      .padding-#{$size}#{$infix} { padding: $length !important; }
-
-      .padding-top-#{$size}#{$infix},
-      .padding-y-#{$size}#{$infix} {
-        padding-top: $length !important;
-      }
-
-      .padding-right-#{$size}#{$infix},
-      .padding-x-#{$size}#{$infix} {
-        padding-right: $length !important;
-      }
-
-      .padding-bottom-#{$size}#{$infix},
-      .padding-y-#{$size}#{$infix} {
-        padding-bottom: $length !important;
-      }
-
-      .padding-left-#{$size}#{$infix},
-      .padding-x-#{$size}#{$infix} {
-        padding-left: $length !important;
-      }
-    }
-
-    .margin-left-n-container#{$infix},
-    .margin-x-n-container#{$infix} { margin-left: calc(-1 * var(--container-padding)); }
-
-    .margin-right-n-container#{$infix},
-    .margin-x-n-container#{$infix} { margin-right: calc(-1 * var(--container-padding)); }
-
-    .padding-left-container#{$infix},
-    .padding-x-container#{$infix} {
-      padding-left: var(--container-padding);
-    }
-
-    .padding-right-container#{$infix},
-    .padding-x-container#{$infix} {
-      padding-right: var(--container-padding);
-    }
-
-    .padding-top-container#{$infix},
-    .padding-y-container#{$infix} {
-      padding-top: var(--container-padding);
-    }
-
-    .padding-bottom-container#{$infix},
-    .padding-y-container#{$infix} {
-      padding-bottom: var(--container-padding);
-    }
-  }
-}
-
 // .padding-header {
 //   padding-top: var(--main-header-height);
 // }

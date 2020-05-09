@@ -1,18 +1,22 @@
 .collapse--faq {
   .simple-collapse__pane {
-    padding-top: var(--space-unit);
+    padding: var(--space-unit) 0;
     border-top: 1px solid var(--color-contrast-low);
 
-    &:not(:last-child) {
-      padding-bottom: var(--space-unit);
+    &:last-child {
+      border-bottom: 1px solid var(--color-contrast-low);
     }
 
-    @include breakpoint(lg) {
-      padding-top: var(--space-lg);
+    // &:not(:last-child) {
+    //   padding-bottom: var(--space-unit);
+    // }
 
-      &:not(:last-child) {
-        padding-bottom: var(--space-lg);
-      }
+    @include breakpoint(lg) {
+      padding: var(--space-lg) 0;
+
+      // &:not(:last-child) {
+      //   padding-bottom: var(--space-lg);
+      // }
     }
   }
 
