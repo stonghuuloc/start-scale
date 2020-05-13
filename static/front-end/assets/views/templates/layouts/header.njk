@@ -2,39 +2,46 @@
   {
     type: 'anchor',
     title: 'Features',
+    active: '',
     url: '#features'
   },
   {
     type: 'anchor',
     title: 'Our Plans',
+    active: '',
     url: '#our-plans'
   },
   {
     type: 'anchor',
     title: 'Our Works',
+    active: '',
     url: '#our-works'
   },
   {
     type: 'anchor',
     title: 'FAQ',
+    active: '',
     url: '#faq'
   },
   {
     type: 'page',
     title: 'Contact Sales',
     url: '/contact.html',
+    active: 'active',
     icon: '/img/icons/ic-contact.svg'
   },
   {
     type: 'page',
     title: 'Log In',
     url: '/log-in.html',
+    active: '',
     icon: '/img/icons/ic-login.svg'
   },
   {
     type: 'page',
     title: 'Sign Up',
     url: '/sign-up.html',
+    active: '',
     icon: '/img/icons/ic-signup.svg'
   }
 ] %}
@@ -42,7 +49,7 @@
 <header class="f-header js-f-header bg hide-nav hide-nav--fixed js-hide-nav js-hide-nav--main" data-nav-target-class="f-header--expanded">
   <div class="f-header__mobile-content container">
     <a href="/" class="f-header__logo">
-      <img src="/img/site-logo.svg" alt="logo">
+      <img src="/img/site-logo.svg" alt="logo" width="50px">
     </a>
 
     <button class="reset anim-menu-btn js-anim-menu-btn f-header__nav-control js-tab-focus" aria-label="Toggle menu" data-theme="primary">
@@ -56,14 +63,14 @@
   <div class="f-header__nav" role="navigation">
     <div class="f-header__nav-grid justify-content-between@md container">
       <div class="f-header__nav-logo-wrapper">
-        <a href="#0" class="f-header__logo">
+        <a href="/" class="f-header__logo">
           <img src="/img/site-logo.svg" alt="logo">
         </a>
       </div>
   
       <ul class="f-header__list">
         {% for item in navItemsList %}
-          <li class="f-header__item">
+          <li class="f-header__item {{ item.active }} ">
             <a href="{{ item.url }}" class="f-header__link">
               {% if item.icon %}
                 <img src="{{ item.icon }}" alt="{{ item.title }}" class="margin-right-xxs">

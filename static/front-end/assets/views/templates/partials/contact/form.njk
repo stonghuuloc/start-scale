@@ -2,7 +2,7 @@
   <div class="section-inner container padding-y-xxxl@lg padding-top-lg padding-bottom-0">
     <div class="grid grid-gap-xxxxl@xl grid-gap-xxl@lg grid-gap-md justify-content-end@lg">
         <div class="col-5@lg">
-          <h1 class="text-center text-left@lg text-color-accent margin-bottom-xl@lg margin-y-md">Talk to a sales representative</h1>
+          <h2 class="text-center text-left@lg text-color-accent margin-bottom-xl@lg margin-y-md">Talk to a sales representative</h2>
           <p class="text-center text-left@lg">Have questions about pricing, plans, or Startscale? <br> Fill out the form and a sales representative will be in touch shortly. </p>
           <img class="padding-x-xxl padding-x-0@lg display-block" src="/img/objects/plane.png" alt="contact form">
         </div>
@@ -12,15 +12,15 @@
               <legend class="text-lg font-weight-bold text-color-primary margin-bottom-lg text-center text-left@lg">Happy to assist you</legend>
               <div class="form-item">
                 <label for="full_name">Full Name</label>
-                <input type="text" id="full_name" name="full_name">
+                <input type="text" id="full_name" name="full_name" placeholder="Enter your full name">
               </div>
               <div class="form-item">
                 <label for="organisation">Organisation Name </label>
-                <input type="text" id="organisation" name="organisation">
+                <input type="text" id="organisation" name="organisation" placeholder="Enter your organisation name">
               </div>
               <div class="form-item">
                 <label for="email">Work Email</label>
-                <input type="text" id="email" name="email">
+                <input type="text" id="email" name="email" placeholder="Enter your work email">
               </div>
               <div class="form-item">
                 <label for="phone_number">Phone Number</label>
@@ -39,14 +39,14 @@
               </div>
               <div class="form-item">
                 <label for="company_size">Company Size</label>
-                <input type="text" id="company_size" name="company_size">
+                <input type="text" id="company_size" name="company_size" placeholder="Enter your company size">
               </div>
               <div class="form-item">
                 <label for="subject">How can we help you?</label>
                 <div class="custom-select">
                   <select type="text" id="subject" name="subject">
                     {# FOR PLACEHOLDER ONLY #}
-                    <option value="Select..." disabled>Select...</option>
+                    <option value="Select..." disabled selected>Select...</option>
                     {# /FOR PLACEHOLDER ONLY #}
                     <option value="I like to understand how Startscale will work with us." data-flat="">I like to understand how Startscale will work with us.</option>
                     <option value="I like to know which plan is suitable for my company." data-flat="">I like to know which plan is suitable for my company.</option>
@@ -55,7 +55,7 @@
                 </div>
               </div>
               <div class="form-item text-center margin-top-lg">
-                <bottom class="btn btn--primary">Send <i class="fas fa-chevron-right margin-left-sm"></i></bottom>
+                <bottom class="btn btn--primary">Send <i class="fas fa-chevron-right margin-left-sm icon-thin"></i></bottom>
               </div>
             </fieldset>
           </form>

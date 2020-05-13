@@ -49,3 +49,23 @@
     }
   }
 }
+
+#slider-support {
+  .tns-controls > .btn--slider {
+    transform: translate(0, -600%);
+
+    @include breakpoint(lg) {
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+#slider-testimonials {
+  .tns-controls > .btn--slider {
+    transform: translate(0, -80%);
+
+    @include breakpoint(lg) {
+      transform: translate(0, -50%);
+    }
+  }
+}

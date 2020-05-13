@@ -36,8 +36,8 @@
 <section class="section section--features bg-default overflow-visible" data-theme="primary" data-bg="url('/img/objects/bg-home-2.jpg')" style="background-size: 100% 1024px; background-position: top;">
   <div class="section__inner container padding-top-xxxxl@lg padding-top-xxl">
     <div class="section__heading max-width-md margin-x-auto text-center margin-bottom-xxxl@lg margin-bottom-lg">
-      <h2 class="margin-bottom-xxl@lg margin-bottom-md text-capitalize margin-bottom-xl@lg margin-bottom-default to-animate" data-animate="up">If You Don’t Know Where To Start,<br><span>Start With Us</span></h2>
-      <p class="text-lg font-weight-bold text-capitalize to-animate" data-animate="up">We help you</p>
+      <h2 class="margin-bottom-xxl@lg margin-bottom-md text-capitalize margin-bottom-xl@lg margin-bottom-default to-animate padding-x-md padding-x-sm@lg" data-animate="up">If You Don’t Know Where To Start,<br><span>Start With Us</span></h2>
+      <p class="text-lg font-weight-bold to-animate" data-animate="up">We help you</p>
     </div>
 
     <div class="max-width-md margin-x-auto margin-bottom-xxxl@lg margin-bottom-lg">
@@ -45,7 +45,7 @@
         {% for item in features %}
           <div class="col-3@lg col-6">
             <div class="feature-item rounded-lg bg-white to-animate" data-theme="default" data-animate="up">
-              <img data-src="{{ item.icon }}" alt="feature" class="margin-bottom-md">
+              <img data-src="{{ item.icon }}" style="height: 74px;" alt="feature" class="margin-bottom-md">
               <p>{{ item.content }}</p>
             </div>
           </div>
@@ -59,7 +59,7 @@
               <div class="feature-item rounded-lg bg-white margin-x-md" data-theme="default">
                 <div class="margin-x-auto width-100% margin-bottom-md" style="max-width: 80px;">
                   <div class="crop crop--fit">
-                    <img data-src="{{ item.icon }}" alt="feature" class="crop__content crop__content-contain">
+                    <img data-src="{{ item.icon }}" style="height: 74px;" alt="feature" class="crop__content crop__content-contain">
                   </div>
                 </div>
                 <p>{{ item.content }}</p>

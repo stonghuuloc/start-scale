@@ -107,3 +107,9 @@ $textSizers: (
 .text-mega-2 { letter-spacing: 0.25em !important; }
 
 .text-decoration-none { text-decoration: none !important; }
+
+.text-underline-lower {
+  display: inline-block;
+  border-bottom: 1px solid black;
+  padding-bottom: 1px;
+}

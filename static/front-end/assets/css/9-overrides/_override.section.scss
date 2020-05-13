@@ -1,6 +1,8 @@
 .section__heading .divider {
   display: block;
   width: 75px;
+  height: 4px;
+  background-color: var(--color-accent);
   margin: 0 auto;
   border-width: 2px;
   border: 1px solid var(--color-accent);

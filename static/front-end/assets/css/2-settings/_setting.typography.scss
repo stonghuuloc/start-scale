@@ -20,8 +20,8 @@
   --text-md: calc(1.125 * var(--text-base-size));
   --text-lg: calc(var(--text-base-size) * var(--text-scale-ratio));
   --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
-  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
-  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+  --text-xxl: calc(1.2 * var(--text-xl) * var(--text-scale-ratio));
+  --text-xxxl: calc(var(--text-xxl) / 1.2 * var(--text-scale-ratio));
   --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio) * var(--text-scale-ratio));
 
   // line-height

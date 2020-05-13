@@ -40,18 +40,20 @@
     <div class="section__heading max-width-sm margin-x-auto text-center margin-bottom-xxl">
       <h2 class="text-color-accent margin-bottom-xxl@lg margin-bottom-md to-animate" data-animate="up">Private Marketplace</h2>
       <hr class="divider margin-bottom-xxl@lg margin-bottom-md">
-      <p class="to-animate">StartScale customers can access our powerful, affordable marketplace from their dashboard to update and upgrade marketing services.<br><br>Enjoy the flexibility to add these custom marketing services when planning a big campaign.</p>
+      <p class="to-animate">StartScale customers can access our powerful, affordable marketplace from their dashboard to <br> update and upgrade marketing services.<br><br>Enjoy the flexibility to add these custom marketing services when planning a big campaign.</p>
     </div>
 
-    <div class="grid grid-gap-lg@lg grid-gap-default margin-bottom-xl display@sm">
-      {% for item in marketplace_features %}
+    <div class="max-width-md margin-x-auto">
+      <div class="grid grid-gap-lg@lg grid-gap-default margin-bottom-xl display@sm">
+        {% for item in marketplace_features %}
         <div class="col-3@lg col-6">
           <div class="feature-item rounded-lg bg-white to-animate" data-theme="default" data-animate="up">
             <img data-src="{{ item.icon }}" alt="feature" class="margin-bottom-md">
             <p>{{ item.content }}</p>
           </div>
         </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
 
     <div class="slider-wrapper slider--features padding-x-md padding-bottom-md margin-y-n-md hide@sm to-animate">

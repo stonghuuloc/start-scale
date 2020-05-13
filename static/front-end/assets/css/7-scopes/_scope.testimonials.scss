@@ -47,12 +47,17 @@
 
   .testimonials__author {
     position: relative;
-    align-self: flex-end;
+    align-self: center;
     display: inline-grid;
     grid-template-columns: 94px 1fr;
-    grid-gap: var(--space-md);
+    grid-gap: var(--space-sm);
     align-items: center;
     margin-top: var(--space-lg);
+
+    @include breakpoint(md) {
+      align-self: flex-end;
+      grid-gap: var(--space-md);
+    }
   }
 
   &.testimonials-item--extend {
@@ -78,7 +83,7 @@
         &::before {
           content: '“';
           position: absolute;
-          top: 0;
+          top: 5px;
           left: -18px;
           color: var(--color-accent);
           font-size: 150px;
