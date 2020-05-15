@@ -47,7 +47,8 @@
   }
 
   .simple-collapse__body {
-    padding-left: calc(30px + var(--space-xs));
+    // padding-left: calc(30px + var(--space-xs));
+    padding-left: 0;
 
     @include breakpoint(lg) {
       padding-left: calc(30px + var(--space-lg));

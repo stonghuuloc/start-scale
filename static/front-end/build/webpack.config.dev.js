@@ -9,7 +9,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const utils = require('./utils')
 
 const HOST = 'localhost'
-const PORT = 8081
+const PORT = 8088
 
 module.exports = merge(baseConfig, {
   mode: 'development',

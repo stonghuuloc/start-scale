@@ -16,7 +16,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--btn-padding-y) var(--btn-padding-x);
+  padding: 13px var(--btn-padding-x) 16px;
   white-space: nowrap;
   color: var(--color-white);
   font-family: var(--font-heading);
@@ -31,6 +31,10 @@
   transition: all 0.3s ease;
   font-size: 1em;
   line-height: 30px;
+
+  @include breakpoint(md) {
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+  }
 
   @include fontSmooth;
 

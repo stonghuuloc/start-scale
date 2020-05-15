@@ -33,6 +33,15 @@ Usage: codyhouse.co/license
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.1);
   }
+
+  .f-header__link {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    img {
+      margin-left: 10px;
+    }
+  }
 }
 
 .f-header__mobile-content { // logo + menu button on small devices

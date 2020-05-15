@@ -48,7 +48,7 @@
 
       img {
         margin: 0;
-        margin-top: calc(var(--text-base-size) * (var(--body-line-height) - 1));
+        margin-top: calc(var(--text-base-size) * (var(--body-line-height) - 1.4));
         margin-right: var(--space-xs);
         // transform: translateY(-50%);
       }

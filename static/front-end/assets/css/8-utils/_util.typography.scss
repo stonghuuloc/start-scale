@@ -110,6 +110,12 @@ $textSizers: (
 
 .text-underline-lower {
   display: inline-block;
-  border-bottom: 1px solid black;
-  padding-bottom: 1px;
+  border-bottom: 1px solid;
+  border-color: inherit;
+  padding-bottom: 0;
+  text-decoration: none;
+
+  @include breakpoint(md) {
+    border-bottom: 1px solid;
+  }
 }

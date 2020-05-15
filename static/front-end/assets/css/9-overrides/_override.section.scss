@@ -16,3 +16,12 @@
 .section__heading span {
   color: var(--color-primary);
 }
+
+#no-agency,
+#marketplace {
+  background-position: unset;
+
+  @include breakpoint(md) {
+    background-position: bottom;
+  }
+}
