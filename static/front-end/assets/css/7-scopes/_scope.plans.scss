@@ -22,7 +22,11 @@
     font-weight: bold;
 
     .plan__price {
-      font-size: var(--text-xxxl);
+      font-size: 30px;
+
+      @include breakpoint(lg) {
+        font-size: 90px;
+      }
     }
 
     .divider {
