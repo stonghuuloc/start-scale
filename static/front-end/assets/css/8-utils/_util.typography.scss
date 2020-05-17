@@ -115,6 +115,10 @@ $textSizers: (
   padding-bottom: 0;
   text-decoration: none;
 
+  &:hover {
+    text-decoration: none !important;
+  }
+
   @include breakpoint(md) {
     border-bottom: 1px solid;
   }

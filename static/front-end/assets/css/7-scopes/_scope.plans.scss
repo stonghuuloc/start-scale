@@ -52,9 +52,10 @@
 
       img {
         margin: 0;
-        margin-top: calc(var(--text-base-size) * (var(--body-line-height) - 1.4));
+        margin-top: calc(var(--text-base-size) * (var(--body-line-height) - 1.2));
         margin-right: var(--space-xs);
         // transform: translateY(-50%);
+        width: calc(var(--text-base-size) * 0.9) !important;
       }
     }
   }
