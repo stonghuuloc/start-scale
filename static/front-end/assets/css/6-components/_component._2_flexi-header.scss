@@ -143,6 +143,7 @@ Usage: codyhouse.co/license
   font-weight: bold;
   text-decoration: none !important;
   padding: var(--space-xs) 0;
+  outline: unset !important;
 
   &:hover,
   &[aria-current="page"] {
