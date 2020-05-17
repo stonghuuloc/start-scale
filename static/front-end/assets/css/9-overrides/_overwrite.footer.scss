@@ -1,0 +1,7 @@
+.logo-mobile {
+  width: 102px;
+
+  @include breakpoint(md) {
+    width: 122px;
+  }
+}

@@ -118,6 +118,7 @@ Usage: codyhouse.co/license
 .f-header__item {
   flex-shrink: 0;
   font-size: var(--text-md);
+  outline: unset !important;
   // border-bottom: 1px solid var(--color-contrast-lower);
   &.active::after {
     content: "";
