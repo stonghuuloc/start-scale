@@ -25,3 +25,11 @@
     background-position: bottom;
   }
 }
+
+#home-hero {
+  height: 568px;
+
+  @include breakpoint(md) {
+    height: 1090px;
+  }
+}
