@@ -1,35 +1,43 @@
 {% set features = [
   {
     icon: "/img/icons/ic-ideas.svg",
-    content: "Discover new brand ideas quickly"
+    content: "Discover new brand ideas quickly",
+    contentMobile: "Discover new brand <br> ideas quickly"
   },
   {
     icon: "/img/icons/ic-media.svg",
-    content: "Launch new products on social media"
+    content: "Launch new products on social media",
+    contentMobile: "Launch new products <br> on social media"
   },
   {
     icon: "/img/icons/ic-content.svg",
-    content: "Write compelling content"
+    content: "Write compelling content",
+    contentMobile: "Write compelling <br> content"
   },
   {
     icon: "/img/icons/ic-design.svg",
-    content: "Craft appealing graphic designs"
+    content: "Craft appealing graphic designs",
+    contentMobile: "Craft appealing <br> graphic designs"
   },
   {
     icon: "/img/icons/ic-photo.svg",
-    content: "Plan professional photo shoots"
+    content: "Plan professional photo shoots",
+    contentMobile: "Plan professional <br> photo shoots"
   },
   {
     icon: "/img/icons/ic-videos.svg",
-    content: "Create campaign videos"
+    content: "Create campaign videos",
+    contentMobile: "Create campaign <br> videos"
   },
   {
     icon: "/img/icons/ic-pages.svg",
-    content: "Manage social media pages"
+    content: "Manage social media pages",
+    contentMobile: "Manage social media <br> pages"
   },
   {
     icon: "/img/icons/ic-plans.svg",
-    content: "Write marketing plans"
+    content: "Write marketing plans",
+    contentMobile: "Write <br> marketing plans"
   }
 ] %}
 
@@ -46,7 +54,8 @@
           <div class="col-3@lg col-6">
             <div class="feature-item rounded-lg bg-white to-animate" data-theme="default" data-animate="up">
               <img data-src="{{ item.icon }}" style="height: 74px;" alt="feature" class="margin-bottom-md">
-              <p>{{ item.content }}</p>
+              <p class="display@sm">{{ item.content | safe }}</p>
+              <p class="hide@sm">{{ item.contentMobile | safe }}</p>
             </div>
           </div>
         {% endfor %}
@@ -62,7 +71,8 @@
                     <img data-src="{{ item.icon }}" style="height: 74px;" alt="feature" class="crop__content crop__content-contain">
                   </div>
                 </div>
-                <p>{{ item.content }}</p>
+                <p class="display@sm">{{ item.content | safe }}</p>
+                <p class="hide@sm">{{ item.contentMobile | safe }}</p>
               </div>
             </div>
           {% endfor %}
