@@ -280,6 +280,7 @@ Usage: codyhouse.co/license
   .f-header__item {
     margin-right: var(--space-lg); // margin between nav items
     font-size: var(--text-md);
+    border: unset !important;
   }
 }
 

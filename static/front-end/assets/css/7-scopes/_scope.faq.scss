@@ -46,6 +46,10 @@
     opacity: 1;
   }
 
+  .simple-collapse__checkbox:checked + .simple-collapse__label .simple-collapse__trigger img:first-child {
+    opacity: 0;
+  }
+
   .simple-collapse__body {
     // padding-left: calc(30px + var(--space-xs));
     padding-left: 0;
