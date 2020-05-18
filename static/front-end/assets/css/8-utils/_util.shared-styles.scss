@@ -39,9 +39,9 @@ $positions: static, relative, absolute, fixed, sticky !default;
 .clearfix { clear: both !important; }
 
 // Animate
-// .to-animate {
-//   opacity: 0;
-// }
+.to-animate {
+  opacity: 0;
+}
 
 [data-animate="type"] .line { opacity: 0; }
 
