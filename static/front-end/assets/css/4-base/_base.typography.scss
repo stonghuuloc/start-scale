@@ -32,29 +32,30 @@ h4 {
 }
 
 // text size
+h1,
 .text-xxxxl {
   font-size: var(--text-xxxxl);
   // letter-spacing: -4px;
 }
 
-h1,
+h2,
 .text-xxxl {
   font-size: var(--text-xxxl);
   // letter-spacing: -0.02em;
 }
 
-h2,
+h3,
 .text-xxl {
   font-size: var(--text-xxl);
   letter-spacing: 0.02em;
 }
 
-h3,
+h4,
 .text-xl {
   font-size: var(--text-xl);
 }
 
-h4,
+h5,
 .text-lg {
   font-size: var(--text-lg);
 }

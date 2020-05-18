@@ -40,12 +40,7 @@
 
 @supports (--css: variables) {
   :root {
-    @include breakpoint(sm) {
-      --container-padding: calc((100vw - var(--max-width-xs)) / 2);
-    }
-
     @include breakpoint(md) {
-      // --space-unit:  1.25em;
       --container-padding: calc((100vw - var(--max-width-sm)) / 2);
     }
 

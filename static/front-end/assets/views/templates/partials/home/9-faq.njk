@@ -29,7 +29,7 @@
       <p class="to-animate text-left text-center@md">We’re here to help. Here are our most popular FAQs. We’re always available on Live Chat Support if you have any more questions.</p>
     </div>
 
-    <div class="simple-collapse collapse--faq margin-bottom-default@lg margin-bottom-xxl">
+    <div class="simple-collapse collapse--faq margin-bottom-default@lg margin-bottom-xxl padding-x-xl@lg">
       {% for item in faqs %}
         <div class="simple-collapse__pane to-animate">
           <input id="faq-{{ loop.index0 }}" type="radio" {{ 'checked' if loop.index0 == 0 else '' }} name="faq" class="simple-collapse__checkbox">
@@ -56,7 +56,7 @@
     <div class="padding-left-xxxl@lg">
       <div class="grid grid-gap-xxxl@lg align-items-center">
         <div class="col-6@lg text-left@lg text-center">
-          <h2 class="text-color-primary margin-bottom-xl@lg margin-bottom-default to-animate" data-animate="type">Put your brand in safe hands</h2>
+          <h2 class="text-color-primary margin-bottom-xl@lg margin-bottom-default to-animate">Put your brand in safe hands</h2>
           <p class="text-color-black text-lg font-weight-bold to-animate"><a class="text-decoration-none" href="tel:+123 456 789">+123 456 789</a></p>
           <p class="text-color-black text-lg font-weight-bold to-animate"><a class="text-decoration-none" href="mailto:support@startscale.io">support@startscale.io</a></p>
         </div>

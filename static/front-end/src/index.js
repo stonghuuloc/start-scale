@@ -77,7 +77,7 @@ import "assets/css/main.scss";
 
 
   // init custom libs
-  initAnimation();
+  // initAnimation();
   initFeaturesliders();
   initSupportliders();
   initTestimonialsliders();

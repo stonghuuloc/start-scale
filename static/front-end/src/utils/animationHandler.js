@@ -6,8 +6,8 @@ import { throttle } from ".";
 export default function () {
   const toAnimateEl = document.querySelectorAll('.to-animate');
 
-  const splitTypeEls = document.querySelectorAll('[data-animate=type]');
-  [...splitTypeEls].forEach(el => { SplitType(el, { split: 'lines, words' }); });
+  // const splitTypeEls = document.querySelectorAll('[data-animate=type]');
+  // [...splitTypeEls].forEach(el => { SplitType(el, { split: 'lines, words' }); });
 
   toggleAnimate();
   window.addEventListener('scroll', throttle(toggleAnimate));
@@ -34,18 +34,18 @@ export default function () {
           case 'right':
             animateCls += ' fadeInRight';
             break;
-          case 'zoom-in':
+          case 'zoomIn':
             animateCls += ' zoomIn';
             break;
-          case 'type':
-            let animTarget = el.getElementsByClassName('line');
-            for (let lineIndex = 0; lineIndex < animTarget.length; lineIndex++) {
-              const target = animTarget[lineIndex];
-              setTimeout(() => {
-                Util.addClass(target, "animated fadeInUp");
-              }, lineIndex * 400);
-            }
-            break;
+          // case 'type':
+          //   let animTarget = el.getElementsByClassName('line');
+          //   for (let lineIndex = 0; lineIndex < animTarget.length; lineIndex++) {
+          //     const target = animTarget[lineIndex];
+          //     setTimeout(() => {
+          //       Util.addClass(target, "animated fadeInUp");
+          //     }, lineIndex * 400);
+          //   }
+          //   break;
           default:
             break;
         }

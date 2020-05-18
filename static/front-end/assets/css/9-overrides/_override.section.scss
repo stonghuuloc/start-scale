@@ -17,19 +17,39 @@
   color: var(--color-primary);
 }
 
-#no-agency,
-#marketplace {
-  background-position: unset;
+// #no-agency,
+// #marketplace {
+//   background-position: unset;
+
+//   @include breakpoint(md) {
+//     background-position: bottom;
+//   }
+// }
+
+#home-hero {
+  // height: 568px;
+  background-size: 768px;
+  background-position: bottom;
 
   @include breakpoint(md) {
-    background-position: bottom;
+    height: 1024px;
+    background-size: 1440px;
+  }
+
+  @include breakpoint(xxl) {
+    background-size: 100%;
   }
 }
 
-#home-hero {
-  height: 568px;
+.section--features {
+  background-size: 768px;
+  background-position: top;
 
   @include breakpoint(md) {
-    height: 1090px;
+    background-size: 1440px;
+  }
+
+  @include breakpoint(xxl) {
+    background-size: 100%;
   }
 }

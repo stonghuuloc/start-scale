@@ -41,7 +41,7 @@
   }
 ] %}
 
-<section class="section section--features bg-default overflow-visible" data-theme="primary" data-bg="url('/img/objects/bg-home-2.jpg')" style="background-size: 100% 1024px; background-position: top;">
+<section class="section section--features bg-default overflow-visible" data-theme="primary" data-bg="url('/img/objects/bg-home-2.jpg')">
   <div class="section__inner container padding-top-xxxxl@lg padding-top-xxl">
     <div class="section__heading max-width-md margin-x-auto text-center margin-bottom-xxxl@lg margin-bottom-lg">
       <h2 class="margin-bottom-xxl@lg margin-bottom-md text-capitalize margin-bottom-xl@lg margin-bottom-default to-animate padding-x-md padding-x-0@lg" data-animate="up">If You Don’t Know Where To Start,<br><span>Start With Us</span></h2>
@@ -53,7 +53,7 @@
         {% for item in features %}
           <div class="col-3@lg col-6">
             <div class="feature-item rounded-lg bg-white to-animate" data-theme="default" data-animate="up">
-              <img data-src="{{ item.icon }}" style="height: 74px;" alt="feature" class="margin-bottom-md">
+              <img data-src="{{ item.icon }}" alt="feature" class="feature__icon margin-bottom-default">
               <p class="display@sm">{{ item.content | safe }}</p>
               <p class="hide@sm">{{ item.contentMobile | safe }}</p>
             </div>

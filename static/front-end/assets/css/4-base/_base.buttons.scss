@@ -6,9 +6,12 @@
 
 :root {
   --btn-font-size: 1em;
-  --btn-padding-x: var(--space-md);
-  --btn-padding-y: 18px;
-  --btn-radius: 22px;
+  --btn-radius: 13px;
+
+  @include breakpoint(md) {
+    --btn-font-size: 1.389em;
+    --btn-radius: 22px;
+  }
 }
 
 .btn {
@@ -16,7 +19,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 13px 23px 16px;
+  // padding: 13px 23px 16px;
   white-space: nowrap;
   color: var(--color-white);
   font-family: var(--font-heading);
@@ -30,10 +33,11 @@
   box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
   font-size: 1em;
-  line-height: 30px;
+  line-height: 1;
 
   @include breakpoint(md) {
-    padding: var(--btn-padding-y) var(--btn-padding-x);
+    padding: 16px 33px 20px;
+    line-height: 30px;
   }
 
   @include fontSmooth;

@@ -11,18 +11,18 @@
   --font-secondary: sans-serif;
 
   // body font size
-  --text-base-size: 16px;
+  --text-base-size: 15px;
 
   // type scale
-  --text-scale-ratio: 1.170173659660358;
+  // --text-scale-ratio: 1.13621936647318;
   --text-xs: calc(0.75 * var(--text-base-size));
   --text-sm: calc(0.875 * var(--text-base-size));
   --text-md: calc(1.125 * var(--text-base-size));
-  --text-lg: calc(var(--text-base-size) * var(--text-scale-ratio));
-  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
-  --text-xxl: calc(1.2 * var(--text-xl) * var(--text-scale-ratio));
-  --text-xxxl: calc(var(--text-xxl) / 1.2 * var(--text-scale-ratio));
-  --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-xxl: 23px;
+  --text-xxxl: 25px;
+  --text-xxxxl: 30px;
 
   // line-height
   --body-line-height: 1.66666667;
@@ -37,7 +37,12 @@
   :root {
     @include breakpoint(md) {
       --text-base-size: 18px;
-      --text-scale-ratio: 1.404288643537843;
+      // --text-scale-ratio: 1.351200154803656;
+      --text-lg: 23px;
+      --text-xl: 32px;
+      --text-xxl: 45px;
+      --text-xxxl: 60px;
+      --text-xxxxl: 70px;
     }
   }
 

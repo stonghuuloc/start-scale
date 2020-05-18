@@ -1,16 +1,9 @@
 // classes used to center content on x-axis and set content max width
 .container {
   width: calc(100% - 2 * var(--component-padding));
+  max-width: var(--max-width-sm);
   margin-left: auto;
   margin-right: auto;
-
-  @include breakpoint(sm) {
-    max-width: var(--max-width-xs);
-  }
-
-  @include breakpoint(md) {
-    max-width: var(--max-width-sm);
-  }
 
   @include breakpoint(lg) {
     max-width: var(--max-width-md);

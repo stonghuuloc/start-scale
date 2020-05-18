@@ -21,7 +21,7 @@
   // max-width: 1440px;
   overflow: hidden;
   background-size: cover;
-  background-position: bottom;
+  background-position: bottom left;
   background-repeat: no-repeat;
 }
 
@@ -30,6 +30,15 @@
 
   .hide-nav--fixed & {
     height: 100vh;
+  }
+}
+
+.section--tall {
+  height: 568px;
+
+  @include breakpoint(md) {
+    min-height: 1024px;
+    // max-height: unset;
   }
 }
 

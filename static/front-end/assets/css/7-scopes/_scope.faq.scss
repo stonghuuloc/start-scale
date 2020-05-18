@@ -29,7 +29,7 @@
     margin-right: var(--space-xs);
 
     @include breakpoint(lg) {
-      margin-right: var(--space-lg);
+      margin-right: var(--space-xl);
     }
 
     > img:last-child {
@@ -55,7 +55,7 @@
     padding-left: 0;
 
     @include breakpoint(lg) {
-      padding-left: calc(30px + var(--space-lg));
+      padding-left: calc(30px + var(--space-xl));
     }
   }
 }
