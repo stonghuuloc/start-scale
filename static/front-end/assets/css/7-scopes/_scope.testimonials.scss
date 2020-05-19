@@ -3,11 +3,13 @@
 
   @include breakpoint(md, 'not all') {
     &:first-child {
-      left: var(--container-padding);
+      // left: var(--container-padding);
+      left: calc(var(--container-padding) - 20px);
     }
 
     &:last-child {
-      right: var(--container-padding);
+      // right: var(--container-padding);
+      right: calc(var(--container-padding) - 20px);
     }
   }
 
@@ -26,7 +28,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: var(--space-xl) calc(var(--container-padding) + var(--space-xl)) var(--space-lg);
+  // padding: var(--space-xl) calc(var(--container-padding) + var(--space-xl)) var(--space-lg);
+  padding: var(--space-xl) 60px var(--space-lg);
   box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.1);
 
   @include breakpoint(md) {
@@ -49,12 +52,13 @@
     position: relative;
     align-self: center;
     display: inline-grid;
-    grid-template-columns: 94px 1fr;
+    grid-template-columns: 58px 1fr;
     grid-gap: var(--space-sm);
     align-items: center;
     margin-top: var(--space-lg);
 
     @include breakpoint(md) {
+      grid-template-columns: 94px 1fr;
       align-self: flex-end;
       grid-gap: var(--space-md);
     }
