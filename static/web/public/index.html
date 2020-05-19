@@ -134,7 +134,7 @@
       </div>
   
       <div class="to-animate" data-animate="up" data-delay="3">
-        <a href="#our-plans" class="btn btn--primary padding-x-md text-lg">View Our Plans <i class="fas fa-chevron-right margin-left-sm icon-thin"></i></a>
+        <a href="#our-plans" class="btn btn--primary padding-x-md text-lg">View Our Plans <img src="/img/objects/arrow.png" class="arrow" alt=""></i></a>
       </div>
     </div>
   </div>
@@ -462,7 +462,7 @@
     </div>
   </div>
 </section>
-  <section class="section" data-bg="url('/img/objects/bg 4 homepage pc.png')" data-theme="primary">
+  <section id="section-follow" class="section" style="background-image: url('/img/objects/together2.png');" data-theme="primary">
   <div class="section__inner section--tall container">
     <div class="d-flex justify-content-center align-items-center height-100%">
       <div class="max-width-sm margin-x-auto text-center">
@@ -470,36 +470,34 @@
           <h2 class="margin-x-md margin-x-xs@md">Let’s get more<br>marketing done, <span>together</span></h2>
         </div>
 
-        <ul class="d-inline-flex list-inline margin-left-n-xxl@lg margin-left-n-xl text-xxl to-animate" data-delay="1">
-          <li class="list-inline-item margin-left-xxl@lg margin-left-md">
+        <ul id="follow-icon" class="text-xxl to-animate" data-delay="1">
+          <li class="list-inline-item">
             <a href="/" target="_blank">
-              <i class="fab fa-facebook-f"></i>
+              <img class="svg-inline--fa" src="/img/objects/fb-icon.png" alt="">
             </a>
           </li>
 
-          <li class="list-inline-item margin-left-xxl@lg margin-left-md">
+          <li class="list-inline-item">
             <a href="/" target="_blank">
-              <i class="fab fa-instagram"></i>
+              <img class="svg-inline--fa" src="/img/objects/instagram-icon.png" alt="">
             </a>
           </li>
 
-          <li class="list-inline-item margin-left-xxl@lg margin-left-md">
+          <li class="list-inline-item">
             <a href="/" target="_blank">
-              <i class="fab fa-linkedin-in"></i>
+              <img class="svg-inline--fa" src="/img/objects/linkedin-icon.png" alt="">
             </a>
           </li>
 
-          <li class="list-inline-item margin-left-xxl@lg margin-left-md">
+          <li class="list-inline-item">
             <a href="/" target="_blank">
               <img class="svg-inline--fa" src="/img/icons/social-icon.png" alt="">
-              <!-- Add class svg-inline--fa for image from resource -->
             </a>
           </li>
 
-          <li class="list-inline-item margin-left-xxl@lg margin-left-md">
+          <li class="list-inline-item">
             <a href="/" target="_blank">
               <img class="svg-inline--fa" src="/img/icons/message-icon.png" alt="">
-              <!-- Add class svg-inline--fa for image from resource -->
             </a>
           </li>
         </ul>
@@ -632,13 +630,18 @@
     </div>
   </div>
 </section>
-  <section id="no-agency" class="section padding-top-xxxxl@lg padding-top-xl@md" data-bg="url('/img/objects/bg-home-5.jpg')" data-theme="primary">
-  <div class="section__inner container section--tall padding-top-xxxl@lg padding-bottom-xxxxl@lg padding-y-xl">
-    <div class="position-relative d-flex align-items-end@lg align-items-center max-width-md margin-x-auto height-100%">
+  <section id="no-agency" class="section position-relative padding-top-xxxxl@lg padding-top-xl@md" data-theme="primary">
+  <div class="section__inner position-static container section--tall padding-top-xxxl@lg padding-bottom-xxxxl@lg padding-y-xl">
+    <div class="d-flex align-items-end@lg align-items-center max-width-md margin-x-auto height-100%">
       <picture>
-        <source media="(min-width: 768px)" data-srcset="/img/objects/home-5-decor.svg">
-        <img data-src="/img/objects/home-5-decor-mobile.svg" style="left: 30%;" alt="decor" class="position-absolute top-0 left-0@md position-center-x">
+        <source media="(min-width: 990px)" data-srcset="/img/objects/no-agency.png">
+        <img data-src="/img/objects/no-agency-mobile.jpg" style="left: 0; top: 0; width: 100%; height: 100%;" alt="decor" class="position-absolute left-0@md position-center-x">
       </picture>
+
+      <!-- <picture>
+        <source media="(min-width: 769px)" data-srcset="/img/objects/home-5-decor.svg">
+        <img data-src="/img/objects/home-5-decor.svg" style="left: 50%; top: calc(var(--space-xxl) + 60px); width: 70px;" alt="decor" class="position-absolute left-0@md position-center-x">
+      </picture> -->
 
       <div class="section__heading text-center margin-bottom-xxl@lg margin-x-auto">
         <h2 class="to-animate display@sm" data-animate="up">Save time and money with <br> your own personal, pro marketer.<br><span>No agency hassles</span></h2>
@@ -658,7 +661,7 @@
 
     <div class="grid grid-gap-xxxl@xl grid-gap-xl@lg grid-gap-md">
       <div class="col@lg">
-        <div class="plan-item to-animate" style="background-repeat: no-repeat;" data-bg="url('/img/objects/Intersect.svg')">
+        <div class="plan-item to-animate" style="background-repeat: no-repeat; background-size: cover;" data-bg="url('img/objects/pricing-background.png')">
           <header class="plan__header">
             <p class="plan__title">BASIC PLAN MONTHLY</p>
             <div class="plan__price-wrapper" >
@@ -707,18 +710,18 @@
 
               <p>We're launching soon</p>
 
-              <a href="" class="btn btn--primary">Get me in Waiting List <i class="fas fa-chevron-right margin-left-sm icon-thin"></i></a>
+              <a href="" class="btn btn--primary">Get me in Waiting List <img src="/img/objects/arrow.png" class="arrow" alt=""></a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="col@lg">
-        <div class="plan-item to-animate" style="background-repeat: no-repeat;" data-bg="url('/img/objects/Intersect.svg')">
+        <div class="plan-item to-animate" style="background-repeat: no-repeat; background-size: cover;" data-bg="url('/img/objects/pricing-background.png')">
           <header class="plan__header">
             <p class="plan__title">MAX PLAN MONTHLY</p>
             <div class="plan__price-wrapper">
-              <span class="plan__price">$874</span>
+              <span class="plan__price">$878</span>
               <span class="divider">/</span>
               <span>month</span>
             </div>
@@ -764,7 +767,7 @@
 
               <p>We're launching soon</p>
 
-              <a href="" class="btn btn--primary">Get me in Waiting List <i class="fas fa-chevron-right margin-left-sm icon-thin"></i></a>
+              <a href="" class="btn btn--primary">Get me in Waiting List <img src="/img/objects/arrow.png" class="arrow" alt=""></a>
             </div>
           </div>
         </div>
@@ -1079,7 +1082,11 @@
 
         <div class="col@lg text-right@lg text-center">
           <img data-src="/img/objects/contact.png" alt="contact" class="to-animate display@sm">
-          <img data-src="/img/objects/contact-mobile.png" alt="contact" class="to-animate hide@sm">
+          
+          <picture>
+            <source media="(min-width: 990px)" data-srcset="/img/objects/contact.png" class="to-animate">
+            <img data-src="/img/objects/contact-mobile-2.png" class="to-animate">
+          </picture>
         </div>
       </div>
     </div>
@@ -1102,20 +1109,10 @@
         <p class="text-sm hide@sm">Not ready to start right now? Sign up for <br> StartScale updates and exclusive offers. We’re <br> here for you when you’re ready.</p>
       </div>
       <div class="col-3@md">
-        <a href="/sign-up.html" class="btn btn--primary">Sign Up <i class="fas fa-chevron-right margin-left-sm icon-thin"></i></a>
+        <a href="/sign-up.html" class="btn btn--primary">Sign Up 
+          <img src="/img/objects/arrow.png" class="arrow" alt="">
+        </a>
       </div>
-
-      <!-- <div class="col-7@lg col-9@md">
-        <div class="grid grid-gap-md">
-          <div class="col-8@md">
-            <p class="text-sm">Not ready to start right now? Sign up for StartScale updates and exclusive offers. <br> We’re here for you when you’re ready.</p>
-          </div>
-
-          <div class="col-4@md">
-            <a href="/sign-up.html" class="btn btn--primary">Sign Up <i class="fas fa-chevron-right margin-left-sm icon-thin"></i></a>
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
 </section>
