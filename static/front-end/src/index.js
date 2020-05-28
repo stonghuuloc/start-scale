@@ -2,6 +2,9 @@ import LazyLoad from "vanilla-lazyload";
 import FontFaceObserver from "fontfaceobserver";
 // import Scrollbar from "smooth-scrollbar";
 import SmoothScroll from "smooth-scroll";
+import "./libs/_2_hiding-nav";
+import "./libs/custom-select";
+import "./components/portfolio";
 // import ScrollMagic from "scrollmagic";
 // import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 // -------------------------
@@ -65,15 +68,15 @@ import "assets/css/main.scss";
   if (!window.location.pathname.slice(1)) {
     Util.addClass(document.querySelector('.js-f-header'), 'f-header--transparent');
   }
-  import("./libs/_2_hiding-nav");
 
-  if ($('.custom-select').length) {
-    import('./libs/custom-select').then(module => module.default());
-  }
 
-  if ($('.portfolio-list').length) {
-    import('./components/portfolio').then(module => module.default());
-  }
+  // if ($('.custom-select').length) {
+    // import('./libs/custom-select').then(module => module.default());
+  // }
+
+  // if ($('.portfolio-list').length) {
+    // import('./components/portfolio').then(module => module.default());
+  // }
 
 
   // init custom libs

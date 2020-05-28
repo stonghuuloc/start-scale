@@ -13,7 +13,7 @@ module.exports = {
   },
   themePath: function (domain) {
     const themeName = domain.split('.').join('-')
-    return path.join('/app/themes', `cs-${themeName}`)
+    return path.join('/wp-content/themes', `${themeName}`)
   },
   productionPath: function (_root, _path) {
     return path.join(_root, _path);
