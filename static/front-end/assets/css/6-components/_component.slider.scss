@@ -24,6 +24,9 @@
   // .tns-outer .tns-nav {
   //   display: none;
   // }
+  .tns-outer .tns-visually-hidden {
+    display: none;
+  }
 }
 
 .tns-slider:not(.tns-vertical) {
