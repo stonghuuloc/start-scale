@@ -178,7 +178,7 @@
                   </label>
                   <input type="file" name="resume" id="resume" class="hide">
                 </div>
-                <button class="btn btn--primary" type="submit">Send <img src="/img/objects/arrow.png" class="arrow" alt=""></button>
+                <button class="btn btn--primary" aria-controls="modal-sent-email">Send <img src="/img/objects/arrow.png" class="arrow" alt=""></button>
               </div>
             </fieldset>
           </form>
@@ -187,6 +187,26 @@
     </div>
   </div>
 </section>
+
+
+
+<div class="modal--is-visible portfolio__popup modal modal--animate-scale d-flex flex-center bg-contrast-higher bg-opacity-90% padding-md js-modal" id="modal-sent-email">
+    <div style="max-width: 659px;" class="modal__content width-100% container bg-white rounded-lg shadow-all" role="alertdialog" aria-labelledby="modal-title" aria-describedby="modal-description">
+        <div class="padding-y-xl@lg padding-y-default padding-x-xxl@lg padding-x-container@md padding-x-xs">
+            <div class="grid grid-gap-xxl@lg grid-gap-lg">
+                <div class="email-sent text-center">
+                    <h2 class="text-color-primary">Email sent! </h2>
+                    <img data-src="/img/objects/email-sent.png" class="margin-y-md">
+                    <p class="display@sm">You will soon receive an email once we have review and approve <br> your application to join Startscale. </p>
+                    <p class="hide@sm">You will soon receive an email once <br> we have review and approve your <br> application to join Startscale. </p>
+                    <div class="margin-top-md text-center">
+                        <button class="btn btn--primary reset js-modal__close js-tab-focus" type="submit">Close <img src="/img/objects/arrow.png" class="arrow" alt=""></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
         </main>
       </div>

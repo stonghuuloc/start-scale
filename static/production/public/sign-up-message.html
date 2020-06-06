@@ -125,68 +125,23 @@
 </header>
         <main>
           
-  <section class="section section--sign-up">
-  <div class="section__inner width-100%">
-    <div class="grid">
-      <div class="col-6@md section--fullScreen position-relative" data-theme="primary">
-        <div class="d-flex flex-column align-items-center padding-y-xl height-100% text-left@md text-center">
-          <picture>
-            <source media="(min-width: 768px)" data-srcset="/img/objects/sign-up-desktop.png">
-            <img data-src="/img/objects/signup-background.png" alt="" class="height-100% width-100% position-absolute top-0 left-0">
-          </picture>
-          <div style="z-index: 10;" class="margin-top-xxxl padding-top-sm padding-top-xxxl@md padding-x-md">
-            <h2 class="text-color-primary display@sm">Make<br>great money<br>with your<br>marketing mind</h2>
-            <h2 class="text-color-primary hide@sm">Make great money<br>with your<br>marketing mind</h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-6@md">
-        <div class="padding-x-md padding-x-container@lg padding-x-xxxl@xl padding-y-xl@lg padding-y-md">
-          <div class="text-left@lg text-center">
-            <h2 class="text-color-primary">Sign Up</h2>
-            <a href="/" target="_blank" class="sign-up-icon margin-y-lg"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-
-          <div class="text-component margin-bottom-xl">
-            <p>Make the most of your marketing knowledge by joining our new platform built for Marketing Managers. We help you earn smarter and support you like a partner.</p>
-            <br>
-            <p>If you have a spare 3 to 8 hours per month, spend them on StartScale. The more hours you put in, the more money you make.</p>
-            <br>
-            <p>If you’re a talented Marketing Manager with the skills to consult businesses and help brands grow, please send your resume to:</p>
-            <a href="mailto:marketers@startscale.io" class="d-flex align-items-center font-weight-bold text-color-default text-decoration-none"><img data-src="/img/icons/ic-mail.svg" alt="mail" class="margin-right-xs margin-left-0">marketers@startscale.io</a>
-          </div>
-
-          <form action="/login" method="get" class=" margin-top-xxl@lg margin-top-lg max-width-400">
-            <fieldset>
-              <div class="form-item">
-                <input type="text" id="full_name" name="full_name" placeholder="Enter your name">
-              </div>
-              <div class="form-item">
-                <input type="email" id="email" name="email" placeholder="Enter your email">
-              </div>
-              <div class="form-item">
-                <input type="text" id="company_size" name="company_size" placeholder="Place of Residence">
-              </div>
-              <div class="form-item text-center margin-top-lg d-flex flex-row@lg flex-column align-items-center justify-content-between">
-                <div class="margin-bottom-md margin-0@lg">
-                  <label for="resume" class="d-flex align-items-center font-weight-bold text-color-black cursor-pointer">
-                    <img data-src="/img/icons/ic-upload.svg" alt="upload" class="margin-right-xs margin-left-0">
-                    
-                    <span class="text-underline-lower">
-                      Upload resume
-                    </span> 
-                  </label>
-                  <input type="file" name="resume" id="resume" class="hide">
+  <div class="modal--is-visible portfolio__popup modal modal--animate-scale d-flex flex-center bg-contrast-higher bg-opacity-90% padding-md js-modal" id="modal-portfolio-details">
+    <div style="max-width: 659px;" class="modal__content width-100% container bg-white rounded-lg shadow-all" role="alertdialog" aria-labelledby="modal-title" aria-describedby="modal-description">
+        <div class="padding-y-xl@lg padding-y-default padding-x-xxl@lg padding-x-container@md padding-x-xs">
+            <div class="grid grid-gap-xxl@lg grid-gap-lg">
+                <div class="email-sent text-center">
+                    <h2 class="text-color-primary">Email sent! </h2>
+                    <img data-src="/img/objects/email-sent.png" class="margin-y-md">
+                    <p class="display@sm">You will soon receive an email once we have review and approve <br> your application to join Startscale. </p>
+                    <p class="hide@sm">You will soon receive an email once <br> we have review and approve your <br> application to join Startscale. </p>
+                    <div class="margin-top-md text-center">
+                        <button class="btn btn--primary reset js-modal__close js-tab-focus" type="submit">Close <img src="/img/objects/arrow.png" class="arrow" alt=""></button>
+                    </div>
                 </div>
-                <button class="btn btn--primary" type="submit">Send <img src="/img/objects/arrow.png" class="arrow" alt=""></button>
-              </div>
-            </fieldset>
-          </form>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-</section>
+</div>
 
         </main>
       </div>
