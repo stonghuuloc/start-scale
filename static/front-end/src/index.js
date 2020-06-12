@@ -71,11 +71,11 @@ import "assets/css/main.scss";
 
 
   // if ($('.custom-select').length) {
-    // import('./libs/custom-select').then(module => module.default());
+  //   import('./libs/custom-select').then(module => module.default());
   // }
 
   // if ($('.portfolio-list').length) {
-    // import('./components/portfolio').then(module => module.default());
+  //   import('./components/portfolio').then(module => module.default());
   // }
 
 
