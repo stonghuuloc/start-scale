@@ -20,6 +20,8 @@ Usage: codyhouse.co/license
   height: var(--f-header-height);
   width: 100%;
   z-index: var(--zindex-header);
+  transform: none !important;
+  margin-bottom: 0 !important;
 }
 
 .f-header--expanded {
