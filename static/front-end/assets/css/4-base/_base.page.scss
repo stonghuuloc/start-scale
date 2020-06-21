@@ -5,3 +5,8 @@
 // a:hover {
 //   text-decoration: none !important;
 // }
+
+#layout {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
