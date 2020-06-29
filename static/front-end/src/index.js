@@ -132,11 +132,11 @@ import isInViewport from "./utils/isInViewport";
   if (inputFiles.length) {
     for (let index = 0; index < inputFiles.length; index++) {
       const element = inputFiles[index];
-      const label = element.previousElementSibling;
 
-      element.addEventListener('change', function () {
-        let fileName = element.files[0].name;
-        label.childNodes[1].textContent = fileName;
+      element.addEventListener('change', function (e) {
+        const label = e.target.previousElementSibling;
+        let fileName = e.target.files[0].name;
+        label.children[1].textContent = fileName;
       })
     }
   }
