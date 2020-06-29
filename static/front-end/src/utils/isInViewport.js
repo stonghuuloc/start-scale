@@ -7,18 +7,20 @@ window.addEventListener('resize', debounce(() => {
 }))
 
 export default function isInViewport(el) {
-  let offset = isMobile ? 100 : 200;
-  const scroll = window.scrollY + offset || window.pageYOffset + offset;
-  const boundsTop = el.getBoundingClientRect().top + window.scrollY;
+  const HEADER_CLASS = '.f-header';
+  const offsetHeader = document.querySelector(HEADER_CLASS).clientHeight;
+  // const scroll = window.scrollY + offset || window.pageYOffset + offset;
+  const boundsTop = el.getBoundingClientRect().top;
+  const boundsBottom = el.getBoundingClientRect().bottom;
 
   const viewport = {
-    top: scroll,
-    bottom: scroll + window.innerHeight - offset
+    top: window.innerHeight / 4 + offsetHeader,
+    bottom: window.innerHeight * 3 / 4 + offsetHeader
   };
 
   const bounds = {
-    top: boundsTop + el.clientHeight / 3,
-    bottom: boundsTop + el.clientHeight
+    top: boundsTop,
+    bottom: boundsBottom
   };
 
   return bounds.bottom > viewport.top && bounds.top < viewport.bottom;

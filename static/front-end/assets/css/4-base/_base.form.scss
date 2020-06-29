@@ -2,7 +2,12 @@ input,
 textarea {
   padding: var(--space-sm) var(--space-unit);
   // height: 48px;
+  font-size: inherit;
   border: 1px solid #e7e0d9;
   border-radius: var(--radius-sm);
   background-color: rgba(#e7e0d9, 0.4);
+}
+
+input::placeholder {
+  overflow: visible;
 }

@@ -32,7 +32,7 @@
     <div class="simple-collapse collapse--faq margin-bottom-default@lg margin-bottom-xxl padding-x-xl@lg">
       {% for item in faqs %}
         <div class="simple-collapse__pane to-animate">
-          <input id="faq-{{ loop.index0 }}" type="radio" {{ 'checked' if loop.index0 == 0 else '' }} name="faq" class="simple-collapse__checkbox">
+          <input id="faq-{{ loop.index0 }}" type="checkbox" {{ 'checked' if loop.index0 == 0 else '' }} name="faq" class="simple-collapse__checkbox">
           <label for="faq-{{ loop.index0 }}" class="simple-collapse__label">
             <div class="d-flex align-items-center">
               <div class="simple-collapse__trigger">

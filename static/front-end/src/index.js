@@ -65,7 +65,7 @@ import "assets/css/main.scss";
     Util.addClass(document.documentElement, 'fonts-loaded');
     setTimeout(function(){ 
       $('#layout')[0].style.opacity = 1
-     }, 500);
+    }, 500);
   })
 
   if (!window.location.pathname.slice(1)) {
