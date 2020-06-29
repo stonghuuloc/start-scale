@@ -52,6 +52,8 @@ import initSupportliders from './components/support-slider';
 import initTestimonialsliders from './components/testimonials-slider';
 
 import "assets/css/main.scss";
+import { throttle } from "./utils";
+import isInViewport from "./utils/isInViewport";
 
 (function () {
   Util.addClass(document.documentElement, 'js');
@@ -71,6 +73,44 @@ import "assets/css/main.scss";
   if (!window.location.pathname.slice(1)) {
     Util.addClass(document.querySelector('.js-f-header'), 'f-header--transparent');
   }
+
+  // NAV SCROLLSPY
+  const navLinks = document.querySelectorAll('.f-header__link');
+  let anchors = [];
+  for (let index = 0; index < navLinks.length; index++) {
+    const element = navLinks[index];
+    let url = new URL(element.href);
+    if (url.hash) {
+      anchors.push({
+        index,
+        hash: url.hash.slice(1)
+      });
+    }
+  }
+
+  if (anchors.length) {
+    let currentActive = [];
+    window.addEventListener('scroll', throttle(() => {
+      if (!currentActive.length) {
+        for (let i = 0; i < anchors.length; i++) {
+          const element = anchors[i];
+          const target = document.getElementById(element.hash);
+          if (target && isInViewport(target)) {
+            Util.addClass(document.querySelectorAll('.f-header__item')[element.index], 'active');
+            currentActive.push(element);
+            break;
+          }
+        }
+      } else {
+        const target = document.getElementById(currentActive[0].hash);
+        if (target && !isInViewport(target)) {
+          Util.removeClass(document.querySelectorAll('.f-header__item')[currentActive[0].index], 'active');
+          currentActive = [];
+        }
+      }
+    }))
+  }
+  // END OF NAV SCROLLSPY
 
 
   // if ($('.custom-select').length) {

@@ -15,10 +15,10 @@
 
     init() {
       for (let index = 0; index < this.triggers.length; index++) {
-        const element = this.triggers[index];
+        const trigger = this.triggers[index];
         const self = this;
 
-        element.addEventListener('click', function () {
+        trigger.addEventListener('click', function () {
           const selected_index = event.target.dataset.index;
           const selected_el = self.items[selected_index];
           const title = selected_el.dataset.title;
