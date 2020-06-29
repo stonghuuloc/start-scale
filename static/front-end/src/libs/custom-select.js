@@ -84,8 +84,8 @@
 
       for (let index = 0; index < this.selectOptions.length; index++) {
         const option = this.selectOptions[index];
-        let label = option.innerText;
         option.addEventListener('click', function () {
+          let label = option.innerText;
           if (self.element.querySelector('.select__option.selected'))
             Util.removeClass(self.element.querySelector('.select__option.selected'), 'selected');
           Util.addClass(option, 'selected');

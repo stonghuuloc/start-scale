@@ -7,6 +7,8 @@
   select {
     padding: 0 var(--space-unit);
     height: 48px;
+    color: inherit;
+    font-weight: 300;
     border: 1px solid var(--color-contrast-low);
     border-radius: var(--radius-md);
     background-color: #fcfdfd;
@@ -15,22 +17,22 @@
   input,
   textarea {
     width: 100%;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    // appearance: none;
   }
 
   input::placeholder,
   textarea::placeholder {
     font-weight: 300;
     font-family: var(--font-primary);
-    font-size: 15px;
-    line-height: 26px;
+    // font-size: 15px;
+    // line-height: 26px;
 
-    @include breakpoint(md) {
-      font-size: 18px;
-      line-height: 30px;
-    }
+    // @include breakpoint(md) {
+    //   font-size: 18px;
+    //   line-height: 30px;
+    // }
   }
 
   label {
