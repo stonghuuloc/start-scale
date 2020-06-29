@@ -63,8 +63,9 @@ import "assets/css/main.scss";
 
   Promise.all([font_primary.load(), font_heading.load()]).then(() => {
     Util.addClass(document.documentElement, 'fonts-loaded');
-
-    $('#layout')[0].style.opacity = 1;
+    setTimeout(function(){ 
+      $('#layout')[0].style.opacity = 1
+     }, 500);
   })
 
   if (!window.location.pathname.slice(1)) {

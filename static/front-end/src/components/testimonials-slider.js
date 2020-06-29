@@ -17,6 +17,7 @@ export default function () {
       loop: false,
       rewind: true,
       autoplay: true,
+      speed: 600,
       autoplayTimeout: 3000,
       autoplayHoverPause: true,
       autoplayButtonOutput: false,
